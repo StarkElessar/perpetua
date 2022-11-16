@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new fullpage('#fullpage', {
     menu: '#navigation',
     css3: true,
-    scrollingSpeed: 1000,
+    scrollingSpeed: 1500,
     slidesNavPosition: 'bottom',
     lazyLoading: true,
     sectionSelector: '.section',
@@ -39,13 +39,27 @@ document.addEventListener('DOMContentLoaded', () => {
       if (destination.item.classList.contains('scene__4')) {
         const scene4 = destination.item
         const box1 = scene4.querySelector('.box-1')
+        const box2 = scene4.querySelector('.box-2')
+        const box3 = scene4.querySelector('.box-3')
 
         setTimeout(() => {
           box1.classList.add('active')
-        }, 5000)
+        }, 1000)
         setTimeout(() => {
           box1.classList.remove('active')
         }, 10000)
+        setTimeout(() => {
+          box2.classList.add('active')
+        }, 11000)
+        setTimeout(() => {
+          box2.classList.remove('active')
+        }, 17000)
+        setTimeout(() => {
+          box3.classList.add('active')
+        }, 18000)
+        setTimeout(() => {
+          box3.classList.remove('active')
+        }, 23500)
       }
     },
   })
