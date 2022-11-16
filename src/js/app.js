@@ -2,7 +2,6 @@ import fullpage from 'fullpage.js'
 
 import { isWebp } from './modules'
 import { delay } from './helpers/delay'
-import { scenaFour } from './modules/scenaFour'
 import { deleteActiveClassName } from './helpers/deleteActiveClassName'
 import { toggleSidebarMenu } from './modules/toggleSidebarMenu'
 /* Раскомментировать для использования */
@@ -33,7 +32,19 @@ document.addEventListener('DOMContentLoaded', () => {
     observer: true,
     licenseKey: 'KH50H-8SVN7-KQ07H-MJ62I-MDXUO',
     afterLoad(origin, destination, direction, trigger) {
-      console.log(destination.item)
+      console.log(origin)
+      const video = destination.item.querySelector('video') || null
+
+      if (video) {
+        video.currentTime = 0
+      }
+
+      let timerScene4Box1In = null
+      let timerScene4Box1Out = null
+      let timerScene4Box2In = null
+      let timerScene4Box2Out = null
+      let timerScene4Box3In = null
+      let timerScene4Box3Out = null
 
       if (destination.item.classList.contains('scene__4')) {
         const box1 = destination.item.querySelector('.box-1')
@@ -42,16 +53,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         deleteActiveClassName('.box-text', 'active')
 
-        delay(1000).then(() => box1.classList.add('active'))
-        delay(10000).then(() => box1.classList.remove('active'))
+        timerScene4Box1In = delay(1000).then(() => box1.classList.add('active'))
+        timerScene4Box1Out = delay(10000).then(() => box1.classList.remove('active'))
+        timerScene4Box2In = delay(11000).then(() => box2.classList.add('active'))
+        timerScene4Box2Out = delay(17000).then(() => box2.classList.remove('active'))
+        timerScene4Box3In = delay(18000).then(() => box3.classList.add('active'))
+        timerScene4Box3Out = delay(23500).then(() => box3.classList.remove('active'))
 
-        delay(11000).then(() => box2.classList.add('active'))
-        delay(17000).then(() => box2.classList.remove('active'))
-
-        delay(18000).then(() => box3.classList.add('active'))
-        delay(23500).then(() => box3.classList.remove('active'))
+        timerScene4Box1In
+        timerScene4Box1Out
+        timerScene4Box2In
+        timerScene4Box2Out
+        timerScene4Box3In
+        timerScene4Box3Out
       }
       if (destination.item.classList.contains('scene__5')) {
+        clearTimeout(timerScene4Box1In)
+        clearTimeout(timerScene4Box1Out)
+        clearTimeout(timerScene4Box2In)
+        clearTimeout(timerScene4Box2Out)
+        clearTimeout(timerScene4Box3In)
+        clearTimeout(timerScene4Box3Out)
+
         const box1 = destination.item.querySelector('.box-1')
         const box2 = destination.item.querySelector('.box-2')
         const box3 = destination.item.querySelector('.box-3')
@@ -72,23 +95,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
   })
-
-  const videos = document.querySelectorAll('video')
-  const options = { root: document.body }
-  const callback = (entries, observer) => {
-    entries.forEach((entry) => {
-      const video = entry.target
-
-      if (entry.isIntersecting) {
-        video.currentTime = 0
-
-        console.log(video.currentTime);
-      }
-    })
-  }
-
-  const sectionObserver = new IntersectionObserver(callback, options)
-  videos.forEach((videos) => sectionObserver.observe(videos))
-
-  scenaFour()
 })
