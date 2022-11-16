@@ -37,15 +37,24 @@ document.addEventListener('DOMContentLoaded', () => {
     afterLoad(origin, destination, direction, trigger) {
       console.log(destination.item.classList.contains('scene__4'))
       if (destination.item.classList.contains('scene__4')) {
-        const scene4 = destination.item
-        const box1 = scene4.querySelector('.box-1')
+        const box1 = destination.item.querySelector('.box-1')
+        const box2 = destination.item.querySelector('.box-2')
+        const box3 = destination.item.querySelector('.box-3')
 
-        setTimeout(() => {
-          box1.classList.add('active')
-        }, 5000)
-        setTimeout(() => {
-          box1.classList.remove('active')
-        }, 10000)
+        const delay = (ms) => {
+          return new Promise((resolve, reject) => {
+            setTimeout(resolve, ms);
+          });
+        }
+
+        delay(5000).then(() => box1.classList.add('anim-scene-4-box-1'))
+        delay(10000).then(() => box1.classList.remove('anim-scene-4-box-1'))
+
+        delay(10000).then(() => box2.classList.add('anim-scene-4-box-2'))
+        delay(15000).then(() => box2.classList.remove('anim-scene-4-box-2'))
+
+        delay(15000).then(() => box3.classList.add('anim-scene-4-box-3'))
+        delay(20000).then(() => box3.classList.remove('anim-scene-4-box-3'))
       }
     },
   })
