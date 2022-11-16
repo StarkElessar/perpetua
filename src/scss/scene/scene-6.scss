@@ -1,6 +1,10 @@
 .team {
     background: url(../images/grey__bg.png);
-  
+      .fp-overflow {
+        &::-webkit-scrollbar {
+            width: 0;
+          }
+      }
     &__block {
       padding-top: 50px;
       max-width: 1282px;
@@ -8,7 +12,18 @@
       max-height: 0;
       overflow: hidden;
       transition: all 6s ease-in-out;
+      @include media (1700) {
+        padding: 25px;
+        margin-bottom: 0;
+      }
+      @include media (990) {
+        overflow: initial;
+        &::-webkit-scrollbar {
+            width: 0;
+          }
+      }
     }
+
     &.active {
       .team__block {
         max-height: 100%;
@@ -20,14 +35,45 @@
       font-weight: 600;
       font-size: 24px;
       line-height: 22px;
+      @include media (1280) {
+        margin-bottom: 15px;
+      }
+      @include media (990) {
+        text-align: center;
+        font-size: 12px;
+        line-height: 22px;
+        margin-bottom: 12px;
+        }
     }
     &__text {
       margin-bottom: 70px;
+      @include media (1700) {
+        margin-bottom: 20px;
+      }
+      @include media (990) {
+        text-align: center;
+        max-width: 75%;
+        min-width: 320px;
+        margin: 0 auto 20px;
+        }
+        @include media (600) {
+            margin-bottom: 40px;
+        }
       p {
         font-weight: 300;
         font-size: 20px;
         line-height: 27px;
         margin-bottom: 20px;
+        @include media (1280) {
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 16px;
+          }
+          @include media (990) {
+            font-size: 12px;
+            line-height: 22px;
+            margin-bottom: 12px;
+            }
       }
     }
     &__people {
@@ -35,9 +81,18 @@
       justify-content: space-between;
       padding-top: 17px;
       flex-wrap: wrap;
+        @include media(990) {
+            max-width: 75%;
+            min-width: 320px;
+            margin: 0 auto;
+        }
       .box {
         max-width: 253px;
         width: 100%;
+        @include media (990) {
+            max-width: 50%;
+            margin: 0 auto;
+        }
         &:last-child {
           padding-top: 15px;
         }
@@ -46,15 +101,42 @@
         max-width: 100%;
         width: 100%;
         margin-bottom: 30px;
+        @include media (990) {
+            max-width: 180px;
+            margin: 0 auto 15px;
+        }
+        @include media (600) {
+            max-width: 110px;
+            margin: 0 auto 15px;
+        }
       }
       .name {
         font-size: 24px;
         line-height: 44px;
         margin-bottom: 2px;
+        @include media (990) {
+            font-size: 12px;
+            line-height: 22px;
+            margin-bottom: 6px;
+        }
       }
       .position {
         font-size: 13px;
         line-height: 23px;
+        @include media (990) {
+            font-size: 8px;
+            line-height: 14px;
+            margin-bottom: 20px;
+        }
       }
+    }
+  }
+
+  @media (max-height: 768px) {
+    .team__people .box {
+        max-width: 180px;
+        img {
+            margin-bottom: 12px;
+        }
     }
   }
