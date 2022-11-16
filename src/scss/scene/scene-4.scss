@@ -97,6 +97,8 @@
       &.active {
         max-height: 100%;
         transition: all 1s ease-in-out;
+        padding-top: 45px;	
+        padding-bottom: 65px;
         @include media (990) {
           padding-top: 25px;
           padding-bottom: 35px;
