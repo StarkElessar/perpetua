@@ -1,0 +1,66 @@
+.scene__3 {
+    position: relative;
+    z-index: 0;
+    background: url(../images/black__bg.png);
+    color: #ffffff;
+    &::before {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      height: 50px;
+      width: 100%;
+      left: 0;
+      right: 0;
+      top: -10px;
+      background: #000000;
+    }
+    &::after {
+      content: "";
+      z-index: 1;
+      position: absolute;
+      height: 10px;
+      width: 100%;
+      left: 0;
+      right: 0;
+  
+      bottom: -10px;
+      background: #000000;
+    }
+    background: url(../images/black__bg.png);
+    color: #ffffff;
+    &-block {
+      max-height: 0;
+      overflow: hidden;
+      transition: all 4s ease-in-out;
+    }
+    &.active {
+      .scene__3-block {
+        max-height: 100%;
+        transition: all 4s ease-in-out;
+      }
+    }
+    &-title {
+      font-size: 32px;
+      line-height: 56px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-family: "Bunken-Tech";
+      font-weight: 500;
+    }
+    .section__text {
+      max-width: 1010px;
+      margin: 0 auto 65px;
+      p {
+        font-weight: 300;
+        font-size: 21px;
+        line-height: 31px;
+        margin-bottom: 21px;
+        strong {
+          font-weight: 600;
+        }
+        .gradient {
+          font-weight: 600;
+        }
+      }
+    }
+  }

@@ -1,7 +1,14 @@
 @font-face {
-  font-family: Bunken;
+  font-family: Bunken-Tech;
   font-display: swap;
-  src: url("../fonts/Bunken-Tech.woff2") format("woff2"), url("../fonts/Bunken-Tech.woff") format("woff");
-  font-weight: 400;
+  src: url("../fonts/BunkenTechSansStdWideMed/font.woff2") format("woff2"), url("../fonts/BunkenTechSansStdWideMed/font.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: Bunken-Tech;
+  font-display: swap;
+  src: url("../fonts/BunkenTechSansStdWideBold/font.woff2") format("woff2"), url("../fonts/BunkenTechSansStdWideBold/font.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
 }
