@@ -147,3 +147,9 @@
       max-width: 100%;
     }
   }
+
+  @media (max-height: 768px) {
+    .scene__7 .form .social__block {
+        margin-bottom: 50px;
+    }
+  }
