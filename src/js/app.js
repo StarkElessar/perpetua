@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         delay(13500).then(() => box3.classList.add('active'))
         delay(20500).then(() => box3.classList.remove('active'))
         
-        delay(23000).then(() => box4.classList.remove('active'))
+        delay(23000).then(() => box4.classList.add('active'))
       }
     },
   })
