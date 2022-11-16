@@ -11,6 +11,14 @@
         z-index: 10;
         cursor: pointer;
         height: 14px;
+        @include media(990){
+            top: 50px;
+            right: 50px;
+        }
+        @include media(600){
+            top: 25px;
+            right: 25px;
+        }
         span {
             cursor: pointer;
             position: absolute;
@@ -38,12 +46,20 @@
         padding: 150px 40px 150px 30px;
         background: #191516;
         transform: translateX(100%);;
+        @include media(1366){
+            padding-top: 100px;
+        }
+        @include media(990){
+            max-width: 400px;
+        }
         &.active {
             transform: translateX(0);
             width: 100%;
             max-width: 550px;
             transition: 1s ease-in-out all;
-            
+            @include media(990){
+                max-width: 400px;
+            }
         }
         .nav {
             display: flex;
@@ -54,6 +70,9 @@
                 text-align: left;
                 margin-bottom: 30px;
                 list-style: none;
+                @include media(990){
+                    margin-bottom: 25px;
+                }
                 a {
                     text-align: left;
                     font-size: 24px;
@@ -61,14 +80,21 @@
                     letter-spacing: 0em;
                     text-transform: uppercase;
                     font-family: 'Bunken-Tech';
-  
+                    @include media(990){
+                        font-size: 16px;
+                        line-height: 20px;
+                    }
                     &.text {
                         color: #ffffff;
                         text-decoration: none;
                         font-size: 20px;
-                        line-height: 24px;
+                        line-height: 30px;
                         &:hover, &:active, &:focus {
                             background: none;;
+                        }
+                        @include media(990){
+                            font-size: 14px;
+                            line-height: 18px;
                         }
                     }
                 }
