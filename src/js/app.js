@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', () => {
             box3.classList.remove('active')
           }
           if (Math.round(video.currentTime) === 25) {
-            fullpage_api.moveSectionDown();
+            fullpage_api.moveTo(5);
           }
         })
       }
@@ -124,6 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     onLeave(origin, destination, direction) {
       if (origin.anchor === 'scene__1') {
+        if (!toggleSidebarButton.classList.contains('_show-burger')) {
+          toggleSidebarButton.classList.add('_show-burger')
+        }
         if (sidebar.classList.contains('active')) {
           sidebar.classList.remove('active')
         }
