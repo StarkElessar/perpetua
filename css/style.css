@@ -1069,10 +1069,17 @@ body .lock {
   width: 40px;
   position: fixed;
   top: 100px;
-  right: 100px;
+  right: -100px;
   z-index: 10;
   cursor: pointer;
   height: 14px;
+  -webkit-transition: right 1200ms ease-in-out;
+  -o-transition: right 1200ms ease-in-out;
+  transition: right 1200ms ease-in-out;
+}
+
+.navbar .burger__menu._show-burger {
+  right: 100px;
 }
 
 .navbar .burger__menu span {
