@@ -7,10 +7,14 @@
         width: 40px;
         position: fixed;
         top: 100px;
-        right: 100px;
+        right: -100px;
         z-index: 10;
         cursor: pointer;
         height: 14px;
+        transition: right 1200ms ease-in-out;
+        &._show-burger {
+          right: 100px;
+        }
         @include media(1366){
             top: 50px;
             right: 50px;
