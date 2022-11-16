@@ -37,29 +37,24 @@ document.addEventListener('DOMContentLoaded', () => {
     afterLoad(origin, destination, direction, trigger) {
       console.log(destination.item.classList.contains('scene__4'))
       if (destination.item.classList.contains('scene__4')) {
-        const scene4 = destination.item
-        let box1 = scene4.querySelector('.box-1')
-        let box2 = scene4.querySelector('.box-2')
-        let box3 = scene4.querySelector('.box-3')
+        const box1 = destination.item.querySelector('.box-1')
+        const box2 = destination.item.querySelector('.box-2')
+        const box3 = destination.item.querySelector('.box-3')
 
-        setTimeout(() => {
-          box1.classList.add('active')
-        }, 1000)
-        setTimeout(() => {
-          box1.classList.remove('active')
-        }, 10000)
-        setTimeout(() => {
-          box2.classList.add('active')
-        }, 11000)
-        setTimeout(() => {
-          box2.classList.remove('active')
-        }, 17000)
-        setTimeout(() => {
-          box3.classList.add('active')
-        }, 18000)
-        setTimeout(() => {
-          box3.classList.remove('active')
-        }, 23500)
+        const delay = (ms) => {
+          return new Promise((resolve, reject) => {
+            setTimeout(resolve, ms);
+          });
+        }
+
+        delay(1000).then(() => box1.classList.add('active'))
+        delay(10000).then(() => box1.classList.remove('active'))
+
+        delay(11000).then(() => box2.classList.add('active'))
+        delay(17000).then(() => box2.classList.remove('active'))
+
+        delay(18000).then(() => box3.classList.add('active'))
+        delay(23500).then(() => box3.classList.remove('active'))
       }
       if (destination.item.classList.contains('scene__5')) {
         const scene5 = destination.item
