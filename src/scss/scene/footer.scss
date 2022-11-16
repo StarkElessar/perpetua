@@ -1,6 +1,10 @@
 .footer {
     padding-top: 75px;
     padding-bottom: 80px;
+    @include media(800){
+       padding: 30px 15px 40px;
+
+    }
     .container {
       max-width: 1520px;
       padding: 0 20px;
@@ -12,22 +16,65 @@
       justify-content: space-between;
       &.one {
         margin-bottom: 110px;
+        @include media(800){
+            margin-bottom: 50px;
+
+        }
+        @include media(600){
+            align-items: center;
+            flex-direction: column;
+
+        }
+        .logo {
+            @include media(600){
+                margin-bottom: 30px;
+    
+            }
+        }
       }
       &.two {
         align-items: center;
+        @include media(800){
+            flex-direction: column;
+
+        }
         .copy {
           font-size: 14px;
           line-height: 16px;
           margin-right: 300px;
+          @include media(1280) {
+            margin-right: 150px;
+          }
+          @include media(990) {
+            margin-right: 30px;
+          }
+          @include media(800){
+            margin-right: 0;
+            margin-bottom: 20px;
+            
+        }
+
         }
         .links {
           margin-right: auto;
+          @include media(800){
+            margin-right: 0;
+            margin-bottom: 20px;
+            
+        }
           a {
             color: #ffffff;
             font-size: 14px;
             line-height: 16px;
             margin-right: 55px;
             text-decoration: none;
+            @include media(800){
+                margin: 0 30px;
+                
+            }
+            @include media(600) {
+                margin: 0 15px;
+              }
           }
         }
         .design {
@@ -38,11 +85,16 @@
         }
       }
       .social {
+       
+        @include media(600){
+            text-align: center;
+        }
         &__title {
           margin-bottom: 22px;
           font-size: 20px;
           font-weight: 700;
           line-height: 27px;
+
         }
         &__block {
           display: flex;
@@ -59,6 +111,9 @@
               font-size: 14px;
               line-height: 16px;
               text-decoration: none;
+              @include media(600){
+                margin-bottom: 15px;
+            }
             }
           }
         }
