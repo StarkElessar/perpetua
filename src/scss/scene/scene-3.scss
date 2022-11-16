@@ -3,31 +3,6 @@
     z-index: 0;
     background: url(../images/black__bg.png);
     color: #ffffff;
-    &::before {
-      content: "";
-      z-index: 1;
-      position: absolute;
-      height: 50px;
-      width: 100%;
-      left: 0;
-      right: 0;
-      top: -10px;
-      background: #000000;
-    }
-    &::after {
-      content: "";
-      z-index: 1;
-      position: absolute;
-      height: 10px;
-      width: 100%;
-      left: 0;
-      right: 0;
-  
-      bottom: -10px;
-      background: #000000;
-    }
-    background: url(../images/black__bg.png);
-    color: #ffffff;
     &-block {
       max-height: 0;
       overflow: hidden;
@@ -46,15 +21,53 @@
       text-transform: uppercase;
       font-family: "Bunken-Tech";
       font-weight: 500;
+      @include media(1536){
+        font-size: 28px;
+        line-height: 40px;
+        }
+        @include media(990){
+            font-size: 14px;
+            line-height: 28px;
+        }
+        @include media(600){
+            max-width: 315px;
+            margin: 0 auto ;
+            br {
+                display: none;
+            }
+            span {
+                display: block;
+            }
+        }
     }
     .section__text {
       max-width: 1010px;
       margin: 0 auto 65px;
+      @include media(1536){
+        margin-bottom: 40px;
+        }
+        @include media(600){
+            max-width: 320px;
+            margin-bottom: 30px;
+            br {
+                display: none;
+            }
+        }
       p {
         font-weight: 300;
         font-size: 21px;
         line-height: 31px;
         margin-bottom: 21px;
+        @include media(1440){
+            font-size: 18px;
+            margin-bottom: 18px;
+            line-height: 24px;
+            }
+        @include media(990){
+            font-size: 12px;
+            line-height: 22px;
+            margin-bottom: 12px;
+            }
         strong {
           font-weight: 600;
         }
