@@ -44,6 +44,9 @@
     position: absolute;
     max-width: 780px;
     z-index: 2;
+    @include media (990) {
+      max-width: 390px;
+    }
     &::before {
       background: #000000;
       opacity: 0.6;
@@ -68,10 +71,23 @@
       letter-spacing: 0.2em;
       margin-bottom: 20px;
       font-family: "BunkenTech";
+      @include media (990) {
+        padding-top: 17px;
+        margin-bottom: 20px;
+        font-size: 14px;
+        line-height: 28px;
+      }
     }
     p {
       font-size: 20px;
       font-weight: 300;
       line-height: 30px;
+      @include media (990) {
+        font-size: 12px;
+        line-height: 22px;
+        br {
+          display: none;
+        }
+      }
     }
   }

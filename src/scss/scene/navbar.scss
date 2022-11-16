@@ -11,7 +11,7 @@
         z-index: 10;
         cursor: pointer;
         height: 14px;
-        @include media(990){
+        @include media(1366){
             top: 50px;
             right: 50px;
         }

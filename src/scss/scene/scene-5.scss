@@ -3,8 +3,44 @@
         opacity: 0;
         display: none;
     }
+    .video__bg {
+        @include media (990) {
+          height: 90%;
+          &::before {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            width: 100%;
+            background: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 100%);
+          }
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100px;
+            width: 100%;
+            transform: rotate(180deg);
+            background: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 100%);
+          }
+        }
+        @include media (768) {
+            height: 60%;
+            top: 10%;
+
+          }
+          @include media (768) {
+            height: 60%;
+            top: 10%;
+          }
+      }
 }
 .scene__5.active {
+    
     .box-text {
       &.box {
         &-1 {
@@ -64,12 +100,56 @@
       padding: 0 80px 0 70px;
       max-height: 0;
       overflow: hidden;
+      .line {
+        z-index: 1;
+        position: relative;
+        transition: all 2s ease-in-out;
+        &::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            right: 50%;
+            border-bottom: 1px solid #ffffff;
+            height: 1px;
+            width: 0;
+            transition: all 1.5s ease-in-out;
+        }
+    }
+      &.box-1, &.box-2, &.box-3 {
+        @include media (990) {
+          top: auto;
+          bottom: 0;
+          right: 0;
+          left: 0;
+          margin: 0 auto;
+          padding: 0 38px;
+        }
+      }
       &.active {
         padding-top: 45px;
         padding-bottom: 65px;
         max-height: 100%;
+        @include media (990) {
+            padding-top: 25px;
+            padding-bottom: 35px;
+          }
         &.box-4 {
             opacity: 1;
+        }
+        .line {
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                border-bottom: 1px solid #ffffff;
+                height: 1px;
+                width: 178px;
+                transition: all 1.5s ease-in-out;
+                @include media (990) {
+                  width: 110px;
+                }
+              }
         }
       }
     }
