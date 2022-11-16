@@ -1,9 +1,10 @@
-import $ from 'jquery'
 import fullpage from 'fullpage.js'
 
-import { isWebp, headerFixed } from './modules'
+import { isWebp } from './modules'
 import { delay } from './helpers/delay'
 import { scenaFour } from './modules/scenaFour'
+import { deleteActiveClassName } from './helpers/deleteActiveClassName'
+import { toggleSidebarMenu } from './modules/toggleSidebarMenu'
 /* Раскомментировать для использования */
 // import { MousePRLX } from './libs/parallaxMouse'
 
@@ -17,7 +18,7 @@ isWebp()
 // Паралакс мышей ====================================================================================================================================================
 // const mousePrlx = new MousePRLX({})
 // ====================================================================================================================================================
-
+toggleSidebarMenu()
 // Фиксированный header ====================================================================================================================================================
 // headerFixed()
 // ====================================================================================================================================================
@@ -32,11 +33,14 @@ document.addEventListener('DOMContentLoaded', () => {
     observer: true,
     licenseKey: 'KH50H-8SVN7-KQ07H-MJ62I-MDXUO',
     afterLoad(origin, destination, direction, trigger) {
-      console.log(destination.item.classList.contains('scene__4'))
+      console.log(destination.item)
+
       if (destination.item.classList.contains('scene__4')) {
         const box1 = destination.item.querySelector('.box-1')
         const box2 = destination.item.querySelector('.box-2')
         const box3 = destination.item.querySelector('.box-3')
+
+        deleteActiveClassName('.box-text', 'active')
 
         delay(1000).then(() => box1.classList.add('active'))
         delay(10000).then(() => box1.classList.remove('active'))
@@ -48,49 +52,25 @@ document.addEventListener('DOMContentLoaded', () => {
         delay(23500).then(() => box3.classList.remove('active'))
       }
       if (destination.item.classList.contains('scene__5')) {
-        const scene5 = destination.item
-        let box1 = scene5.querySelector('.box-1')
-        let box2 = scene5.querySelector('.box-2')
-        let box3 = scene5.querySelector('.box-3')
-        let box4 = scene5.querySelector('.box-4')
-        box4.classList.remove('active')
-        setTimeout(() => {
-          box1.classList.add('active')
-        }, 1000)
-        setTimeout(() => {
-          box1.classList.remove('active')
-        }, 7000)
-        setTimeout(() => {
-          box2.classList.add('active')
-        }, 7500)
-        setTimeout(() => {
-          box2.classList.remove('active')
-        }, 13000)
-        setTimeout(() => {
-          box3.classList.add('active')
-        }, 13500)
-        setTimeout(() => {
-          box3.classList.remove('active')
-        }, 20500)
-        setTimeout(() => {
-          box4.classList.add('active')
-        }, 23000)
-        // setTimeout(() => {
-        //   box4.classList.remove('active')
-        // }, 28000)
+        const box1 = destination.item.querySelector('.box-1')
+        const box2 = destination.item.querySelector('.box-2')
+        const box3 = destination.item.querySelector('.box-3')
+        const box4 = destination.item.querySelector('.box-4')
+
+        deleteActiveClassName('.box-text', 'active')
+        
+        delay(1000).then(() => box1.classList.add('active'))
+        delay(7000).then(() => box1.classList.remove('active'))
+        
+        delay(7500).then(() => box2.classList.add('active'))
+        delay(13000).then(() => box2.classList.remove('active'))
+        
+        delay(13500).then(() => box3.classList.add('active'))
+        delay(20500).then(() => box3.classList.remove('active'))
+        
+        delay(23000).then(() => box4.classList.remove('active'))
       }
     },
-  })
-
-  if ($('.section').hasClass('active')) {
-    $('.section.active video').currentTime = 0
-  }
-  $('.burger__menu').click(function () {
-    if ($('.navmenu').hasClass('active')) {
-      $('.navmenu').removeClass('active')
-    } else {
-      $('.navmenu').addClass('active')
-    }
   })
 
   const videos = document.querySelectorAll('video')
