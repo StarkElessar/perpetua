@@ -1,0 +1,60 @@
+.team {
+    background: url(../images/grey__bg.png);
+  
+    &__block {
+      padding-top: 50px;
+      max-width: 1282px;
+      margin: 0 auto 65px;
+      max-height: 0;
+      overflow: hidden;
+      transition: all 6s ease-in-out;
+    }
+    &.active {
+      .team__block {
+        max-height: 100%;
+        transition: all 6s ease-in-out;
+      }
+    }
+    &__title {
+      margin-bottom: 21px;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 22px;
+    }
+    &__text {
+      margin-bottom: 70px;
+      p {
+        font-weight: 300;
+        font-size: 20px;
+        line-height: 27px;
+        margin-bottom: 20px;
+      }
+    }
+    &__people {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 17px;
+      flex-wrap: wrap;
+      .box {
+        max-width: 253px;
+        width: 100%;
+        &:last-child {
+          padding-top: 15px;
+        }
+      }
+      img {
+        max-width: 100%;
+        width: 100%;
+        margin-bottom: 30px;
+      }
+      .name {
+        font-size: 24px;
+        line-height: 44px;
+        margin-bottom: 2px;
+      }
+      .position {
+        font-size: 13px;
+        line-height: 23px;
+      }
+    }
+  }

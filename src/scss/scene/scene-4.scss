@@ -11,7 +11,6 @@
         transition: all 0s ease-in-out;
     }
     .box-text {
-
       &.box {
         &-1 { 
           bottom: 95px;
@@ -24,8 +23,8 @@
           }
         }
         &-2 {
-          top: 95px;
-          right: 157px;
+          top: 133px;
+          right: 100px;
           h2 {
             background: linear-gradient(-90deg, #fb0 10%, #1bff00 100%);
             color: transparent;
@@ -34,8 +33,8 @@
           }
         }
         &-3 {
-          bottom: 95px;
-          left: 157px;
+          bottom: 133px;
+          left: 100px;
 
           &::before {
             background: none;
@@ -53,51 +52,38 @@
       overflow: hidden;
       padding: 0 80px 0 70px;
       transition: all 1s ease-in-out;
+        .line {
+            z-index: 1;
+            position: relative;
+            transition: all 2s ease-in-out;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 50%;
+                right: 50%;
+                border-bottom: 1px solid #ffffff;
+                height: 1px;
+                width: 0;
+                transition: all 1.5s ease-in-out;
+            }
+        }
       &.active {
         padding-top: 45px;
         padding-bottom: 65px;
         max-height: 100%;
         transition: all 1s ease-in-out;
+        .line {
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                right: 0;
+                border-bottom: 1px solid #ffffff;
+                height: 1px;
+                width: 178px;
+                transition: all 1.5s ease-in-out;
+              }
+        }
       }
-    }
-  }
-  @keyframes scene_4-box-2 {
-    0%,
-    100% {
-      max-height: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-    62%,
-    95% {
-      max-height: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-    67%,
-    90% {
-      padding-top: 45px;
-      padding-bottom: 65px;
-      max-height: 100%;
-    }
-  }
-  @keyframes scene_4-box-3 {
-    0%,
-    100% {
-      max-height: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-    75%,
-    96% {
-      max-height: 0;
-      padding-top: 0;
-      padding-bottom: 0;
-    }
-    79%,
-    92% {
-      padding-top: 45px;
-      padding-bottom: 65px;
-      max-height: 100%;
     }
   }

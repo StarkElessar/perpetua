@@ -38,9 +38,9 @@ document.addEventListener('DOMContentLoaded', () => {
       console.log(destination.item.classList.contains('scene__4'))
       if (destination.item.classList.contains('scene__4')) {
         const scene4 = destination.item
-        const box1 = scene4.querySelector('.box-1')
-        const box2 = scene4.querySelector('.box-2')
-        const box3 = scene4.querySelector('.box-3')
+        let box1 = scene4.querySelector('.box-1')
+        let box2 = scene4.querySelector('.box-2')
+        let box3 = scene4.querySelector('.box-3')
 
         setTimeout(() => {
           box1.classList.add('active')
@@ -60,6 +60,38 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           box3.classList.remove('active')
         }, 23500)
+      }
+      if (destination.item.classList.contains('scene__5')) {
+        const scene5 = destination.item
+        let box1 = scene5.querySelector('.box-1')
+        let box2 = scene5.querySelector('.box-2')
+        let box3 = scene5.querySelector('.box-3')
+        let box4 = scene5.querySelector('.box-4')
+        box4.classList.remove('active')
+        setTimeout(() => {
+          box1.classList.add('active')
+        }, 1000)
+        setTimeout(() => {
+          box1.classList.remove('active')
+        }, 7000)
+        setTimeout(() => {
+          box2.classList.add('active')
+        }, 7500)
+        setTimeout(() => {
+          box2.classList.remove('active')
+        }, 13000)
+        setTimeout(() => {
+          box3.classList.add('active')
+        }, 13500)
+        setTimeout(() => {
+          box3.classList.remove('active')
+        }, 20500)
+        setTimeout(() => {
+          box4.classList.add('active')
+        }, 23000)
+        // setTimeout(() => {
+        //   box4.classList.remove('active')
+        // }, 28000)
       }
     },
   })
