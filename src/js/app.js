@@ -82,17 +82,6 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   })
 
-  if ($('.section').hasClass('active')) {
-    $('.section.active video').currentTime = 0
-  }
-  $('.burger__menu').click(function () {
-    if ($('.navmenu').hasClass('active')) {
-      $('.navmenu').removeClass('active')
-    } else {
-      $('.navmenu').addClass('active')
-    }
-  })
-
   const videos = document.querySelectorAll('video')
   const options = { root: document.body }
   const callback = (entries, observer) => {
