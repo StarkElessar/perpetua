@@ -2,6 +2,11 @@
     @include media (990) {
         padding: 15px 50px;
     }
+    .fp-overflow {
+        &::-webkit-scrollbar {
+            width: 0;
+          }
+      }
     .form {
       opacity: 1;
       max-width: 720px;
