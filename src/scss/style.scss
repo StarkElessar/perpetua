@@ -6,11 +6,14 @@
 @import "global/fonts";
 @import "global/global";
 @import "global/svg";
-
+@import "scene/scene-4";
 .navbar {
   // display: none;
 }
 
+::-webkit-scrollbar {
+  width: 0;
+}
 .section {
   position: relative;
   .video__bg {
@@ -20,6 +23,7 @@
     right: 0;
     left: 0;
     z-index: -1;
+    height: 100vh;
     video {
       width: 100%;
       height: 100%;
@@ -34,6 +38,16 @@
 }
 .scene__1 {
   background: url(../images/black__bg.png);
+  height: 100vh;
+  overflow: hidden;
+  object-fit: cover;
+  object-position: center bottom;
+  .head__block {
+    height: 100vh;
+    overflow: hidden;
+    object-fit: cover;
+    object-position: center bottom;
+  }
   video {
     width: 100%;
     height: 100%;
@@ -42,7 +56,7 @@
   }
 }
 .gradient {
-  background: linear-gradient(-90deg, #ab00ff 40%, #00fff6 100%);
+  background: linear-gradient(-90deg, #ab00ff 25%, #00fff6 100%);
   color: transparent;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -73,12 +87,12 @@
   &-block {
     max-height: 0;
     overflow: hidden;
-    transition: all 6s ease-in-out;
+    transition: all 2s ease-in-out;
   }
   &.active {
     .scene__2-block {
       max-height: 100%;
-      transition: all 6s ease-in-out;
+      transition: all 2s ease-in-out;
     }
   }
   &-title {
@@ -141,12 +155,12 @@
   &-block {
     max-height: 0;
     overflow: hidden;
-    transition: all 6s ease-in-out;
+    transition: all 4s ease-in-out;
   }
   &.active {
     .scene__3-block {
       max-height: 100%;
-      transition: all 6s ease-in-out;
+      transition: all 4s ease-in-out;
     }
   }
   &-title {
@@ -174,117 +188,7 @@
   }
 }
 
-.scene__4.active {
-  .box-text {
-    &.box {
-      &-1 { 
-        bottom: 95px;
-        left: 157px;
-        h2 {
-          background: linear-gradient(-90deg, #e511ff 10%, #00fff6 100%);
-          color: transparent;
-          -webkit-background-clip: text;
-          background-clip: text;
-        }
-        max-height: 0;
-        animation: scene_4-box-1 12s ease-in-out;
-        overflow: hidden;
-        padding: 0 80px 0 70px;
-      }
-      &-2 {
-        top: 95px;
-        right: 157px;
-        h2 {
-          background: linear-gradient(-90deg, #fb0 10%, #1bff00 100%);
-          color: transparent;
-          -webkit-background-clip: text;
-          background-clip: text;
-        }
-        max-height: 0;
-        animation: scene_4-box-2 20s ease-in-out;
-        overflow: hidden;
-        padding: 0 80px 0 70px;
-      }
-      &-3 {
-        bottom: 95px;
-        left: 157px;
-        max-height: 0;
-        animation: scene_4-box-3 27s ease-in-out;
-        overflow: hidden;
-        padding: 0 80px 0 70px;
-        &::before {
-          background: none;
-        }
-        h2 {
-          background: linear-gradient(-90deg, #e511ff 10%, #00fff6 100%);
-          color: transparent;
-          -webkit-background-clip: text;
-          background-clip: text;
-        }
-      }
-    }
-  }
-}
-@keyframes scene_4-box-1 {
-  0%,
-  100% {
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  25%,
-  95% {
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  30%,
-  90% {
-    padding-top: 45px;
-    padding-bottom: 65px;
-    max-height: 100%;
-  }
-}
-@keyframes scene_4-box-2 {
-  0%,
-  100% {
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  62%,
-  95% {
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  67%,
-  90% {
-    padding-top: 45px;
-    padding-bottom: 65px;
-    max-height: 100%;
-  }
-}
-@keyframes scene_4-box-3 {
-  0%,
-  100% {
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  75%,
-  96% {
-    max-height: 0;
-    padding-top: 0;
-    padding-bottom: 0;
-  }
-  79%,
-  92% {
-    padding-top: 45px;
-    padding-bottom: 65px;
-    max-height: 100%;
-  }
-}
+
 .scene__5.active {
   .box-text {
     &.box {
@@ -829,6 +733,7 @@
       li {
         width: 100%;
         text-align: left;
+        list-style: none;
         margin-bottom: 20px;
         a {
           text-align: left;
@@ -839,6 +744,7 @@
           font-family: "Bunken-Tech";
           &.text {
             color: #ffffff;
+            text-decoration: none;
           }
         }
       }

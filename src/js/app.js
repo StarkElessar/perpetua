@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
   new fullpage('#fullpage', {
     menu: '#navigation',
     css3: true,
-    scrollingSpeed: 1000,
+    scrollingSpeed: 1500,
     slidesNavPosition: 'bottom',
     lazyLoading: true,
     sectionSelector: '.section',
@@ -47,14 +47,14 @@ document.addEventListener('DOMContentLoaded', () => {
           });
         }
 
-        delay(5000).then(() => box1.classList.add('anim-scene-4-box-1'))
-        delay(10000).then(() => box1.classList.remove('anim-scene-4-box-1'))
+        delay(1000).then(() => box1.classList.add('active'))
+        delay(10000).then(() => box1.classList.remove('active'))
 
-        delay(10000).then(() => box2.classList.add('anim-scene-4-box-2'))
-        delay(15000).then(() => box2.classList.remove('anim-scene-4-box-2'))
+        delay(11000).then(() => box2.classList.add('active'))
+        delay(17000).then(() => box2.classList.remove('active'))
 
-        delay(15000).then(() => box3.classList.add('anim-scene-4-box-3'))
-        delay(20000).then(() => box3.classList.remove('anim-scene-4-box-3'))
+        delay(18000).then(() => box3.classList.add('active'))
+        delay(23500).then(() => box3.classList.remove('active'))
       }
     },
   })
