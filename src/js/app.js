@@ -1,11 +1,8 @@
-// import './libs/fullpage/scrolloverflow.min'
-// import './libs/fullpage/jquery.easings.min'
-// import './libs/fullpage/jquery.fullPage.min'
-
 import $ from 'jquery'
 import fullpage from 'fullpage.js'
 
 import { isWebp, headerFixed } from './modules'
+import { delay } from './helpers/delay'
 import { scenaFour } from './modules/scenaFour'
 /* Раскомментировать для использования */
 // import { MousePRLX } from './libs/parallaxMouse'
@@ -40,12 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const box1 = destination.item.querySelector('.box-1')
         const box2 = destination.item.querySelector('.box-2')
         const box3 = destination.item.querySelector('.box-3')
-
-        const delay = (ms) => {
-          return new Promise((resolve, reject) => {
-            setTimeout(resolve, ms);
-          });
-        }
 
         delay(1000).then(() => box1.classList.add('active'))
         delay(10000).then(() => box1.classList.remove('active'))
