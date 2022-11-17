@@ -13,9 +13,9 @@
         height: 14px;
         transition: right 1200ms ease-in-out;
         &._show-burger {
-          right: 100px;
+          right: 25px;
           @include media(1366) {
-            right: 50px;
+            right: 25px;
           }
           @include media(600) {
             right: 25px;
@@ -46,7 +46,7 @@
     .navmenu {
         height: 100vh;
         width: 100%;
-        max-width: 450px;
+        max-width: 350px;
         position: fixed;
         transition: 1s ease-in-out all;
         bottom: 0;
@@ -65,7 +65,7 @@
         &.active {
             transform: translateX(0);
             width: 100%;
-            max-width: 450px;
+            max-width: 350px;
             transition: 1s ease-in-out all;
             @include media(990){
                 max-width: 400px;
