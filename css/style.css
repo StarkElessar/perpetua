@@ -532,6 +532,24 @@ body .lock {
   padding: 0 0.9375rem;
 }
 
+.gradient-title {
+  font-family: "BunkenTech";
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0.2em;
+}
+
+.green-gradient {
+  background: -webkit-gradient(linear, right top, left top, color-stop(40%, #fb0), to(#1bff00));
+  background: -o-linear-gradient(right, #fb0 40%, #1bff00 100%);
+  background: linear-gradient(-90deg, #fb0 40%, #1bff00 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-transform: uppercase;
+}
+
 ::-webkit-scrollbar {
   width: 0;
 }
@@ -903,6 +921,84 @@ body .lock {
   -webkit-transition: all 1.5s ease-in-out;
   -o-transition: all 1.5s ease-in-out;
   transition: all 1.5s ease-in-out;
+}
+
+.scene__4.active .article-block {
+  -webkit-animation: text-animation forwards 6s ease-in-out;
+          animation: text-animation forwards 6s ease-in-out;
+}
+
+.scene__4 video {
+  -webkit-transition: 200ms ease-in-out;
+  -o-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.section__text {
+  max-width: 1010px;
+  margin: 0 auto 65px;
+  text-align: center;
+}
+
+.section__text p {
+  font-weight: 300;
+  font-size: 21px;
+  line-height: 31px;
+  margin-bottom: 21px;
+}
+
+.section__text p strong {
+  font-weight: 600;
+}
+
+.section__text p .gradient {
+  font-weight: 600;
+}
+
+.article-title {
+  font-size: 32px;
+  line-height: 56px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: "BunkenTech";
+  font-weight: 500;
+  text-align: center;
+}
+
+@-webkit-keyframes text-animation {
+  0% {
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  90% {
+    overflow: hidden;
+    max-height: 100%;
+    opacity: 1;
+  }
+
+  100% {
+    overflow: hidden;
+    opacity: 0;
+  }
+}
+
+@keyframes text-animation {
+  0% {
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  90% {
+    overflow: hidden;
+    max-height: 100%;
+    opacity: 1;
+  }
+
+  100% {
+    overflow: hidden;
+    opacity: 0;
+  }
 }
 
 .scene__5 .box-text {
@@ -1547,9 +1643,22 @@ body .lock {
   .scene__3 .section__text {
     margin-bottom: 40px;
   }
+
+  .section__text {
+    margin-bottom: 40px;
+  }
+
+  .article-title {
+    font-size: 28px;
+    line-height: 40px;
+  }
 }
 
 @media (max-width: 1440.98px) {
+  .gradient-title {
+    font-size: 34px;
+  }
+
   .scene__2::before {
     height: 30px;
   }
@@ -1577,6 +1686,12 @@ body .lock {
     margin-bottom: 18px;
     line-height: 24px;
   }
+
+  .section__text p {
+    font-size: 18px;
+    margin-bottom: 18px;
+    line-height: 24px;
+  }
 }
 
 @media (max-width: 1366.98px) {
@@ -1595,6 +1710,10 @@ body .lock {
 }
 
 @media (max-width: 1280.98px) {
+  .gradient-title {
+    font-size: 28px;
+  }
+
   .scene__2-title {
     font-size: 28px;
     margin-bottom: 40px;
@@ -1626,6 +1745,11 @@ body .lock {
 }
 
 @media (max-width: 990.98px) {
+  .gradient-title {
+    font-size: 22px;
+    line-height: 40px;
+  }
+
   .box-text {
     max-width: 390px;
   }
@@ -1709,6 +1833,17 @@ body .lock {
 
   .scene__4.active .box-text.active .line::before {
     width: 110px;
+  }
+
+  .section__text p {
+    font-size: 12px;
+    line-height: 22px;
+    margin-bottom: 12px;
+  }
+
+  .article-title {
+    font-size: 14px;
+    line-height: 28px;
   }
 
   .scene__5 .video__bg {
@@ -1948,6 +2083,11 @@ body .lock {
 }
 
 @media (max-width: 600.98px) {
+  .gradient-title {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
   .scene__2-title {
     max-width: 350px;
     margin: 0 auto 50px;
@@ -1987,6 +2127,28 @@ body .lock {
 
   .scene__3 .section__text br {
     display: none;
+  }
+
+  .section__text {
+    max-width: 320px;
+    margin-bottom: 30px;
+  }
+
+  .section__text br {
+    display: none;
+  }
+
+  .article-title {
+    max-width: 315px;
+    margin: 0 auto;
+  }
+
+  .article-title br {
+    display: none;
+  }
+
+  .article-title span {
+    display: block;
   }
 
   .team__text {
