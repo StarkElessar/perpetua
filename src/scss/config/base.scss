@@ -34,3 +34,40 @@ body {
   margin: 0 auto;
   padding: 0 rem($mainOffset);
 }
+
+.gradient-title {
+  font-family: "BunkenTech";
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 100%;
+  letter-spacing: 0.2em;
+  @include media(1440) {
+    font-size: 34px;
+  }
+  @include media(1280) {
+    font-size: 28px;
+  }
+  @include media(990) {
+    font-size: 22px;
+    line-height: 40px;
+  }
+  @include media(600) {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+}
+.green-gradient {
+  background: linear-gradient(-90deg, #fb0 40%, #1bff00 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-transform: uppercase;
+}
+.video-hidden {
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+}
