@@ -1,9 +1,14 @@
 import fullpage from 'fullpage.js'
 
 import { isWebp } from './modules'
-import { delay } from './helpers/delay'
+
+import { toggleSidebarButton, sidebar } from './helpers/elementsNodeList'
 import { deleteActiveClassName } from './helpers/deleteActiveClassName'
+import { floorNumbers } from './helpers/floorNumbers'
+
 import { toggleSidebarMenu } from './modules/toggleSidebarMenu'
+import { toggleAnimation } from './modules/toggleAnimation'
+
 /* Раскомментировать для использования */
 // import { MousePRLX } from './libs/parallaxMouse'
 
@@ -22,8 +27,15 @@ toggleSidebarMenu()
 // headerFixed()
 // ====================================================================================================================================================
 document.addEventListener('DOMContentLoaded', () => {
-  const toggleSidebarButton = document.querySelector('.burger__menu')
-  const sidebar = document.querySelector('.navmenu')
+  const pageLoadedStartTime = Date.now()
+
+  document.querySelector('.mute-sound').onclick = () => {
+    const audio = new Audio('https://starkelessar.github.io/perpetua/files/audio/background-sound.mp3')
+    const timeClick = (Date.now() - pageLoadedStartTime) / 1000
+
+    audio.currentTime = timeClick
+    audio.play()
+  }
 
   new fullpage('#fullpage', {
     menu: '#navigation',
@@ -35,7 +47,6 @@ document.addEventListener('DOMContentLoaded', () => {
     observer: true,
     licenseKey: 'KH50H-8SVN7-KQ07H-MJ62I-MDXUO',
     afterLoad(origin, destination, direction, trigger) {
-      console.log(origin)
       const video = destination.item.querySelector('video') || null
 
       if (video) video.currentTime = 0
@@ -43,15 +54,9 @@ document.addEventListener('DOMContentLoaded', () => {
       if (destination.item.classList.contains('scene__1')) {
         const video = destination.item.querySelector('video')
 
-        video.addEventListener('timeupdate', () => { 
-          console.log(Math.round(video.currentTime));
-
-          if (Math.round(video.currentTime) === 12) {
-            toggleSidebarButton.classList.add('_show-burger')
-          } 
-          if (Math.round(video.currentTime) === 13) {
-            sidebar.classList.add('active')
-          } 
+        video.addEventListener('timeupdate', ({ target }) => {
+          toggleAnimation(floorNumbers(target.currentTime))
+          toggleAnimation(floorNumbers(target.currentTime))
         })
       }
 
@@ -64,7 +69,7 @@ document.addEventListener('DOMContentLoaded', () => {
         deleteActiveClassName('.box-text', 'active')
 
         video.addEventListener('timeupdate', () => {
-          console.log(Math.round(video.currentTime));
+          console.log(Math.round(video.currentTime))
           if (Math.round(video.currentTime) === 2) {
             box1.classList.add('active')
           }
@@ -84,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
             box3.classList.remove('active')
           }
           if (Math.round(video.currentTime) === 25) {
-            fullpage_api.moveTo(5);
+            fullpage_api.moveTo(5)
           }
         })
       }
