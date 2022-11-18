@@ -3,11 +3,13 @@
   z-index: 0;
   background: url(../images/black__bg.png);
   color: #ffffff;
+
   &-block {
     max-height: 0;
     overflow: hidden;
     transition: all 4s ease-in-out;
   }
+
   &.active {
     .scene__3-block {
       max-height: 100%;
@@ -21,20 +23,26 @@
     text-transform: uppercase;
     font-family: "BunkenTech";
     font-weight: 500;
+
     @include media(1536) {
-      font-size: 28px;
-      line-height: 40px;
+      font-size: 24px;
+      line-height: 36px;
     }
+
     @include media(990) {
       font-size: 14px;
       line-height: 28px;
     }
+
     @include media(600) {
       max-width: 315px;
       margin: 0 auto;
+
       br {
         display: none;
+
       }
+
       span {
         display: block;
       }
@@ -43,69 +51,45 @@
   .section__text {
     max-width: 1010px;
     margin: 0 auto 65px;
+
     @include media(1536) {
       margin-bottom: 40px;
     }
-    &-title {
-      font-size: 32px;
-      line-height: 56px;
-      letter-spacing: 0.2em;
-      text-transform: uppercase;
-      font-family: "BunkenTech";
-      font-weight: 500;
-      @include media(1536){
-        font-size: 24px;
-        line-height: 36px;
-      }
-      @include media(990){
-        font-size: 14px;
-        line-height: 28px;
-      }
-      @include media(600){
-        max-width: 315px;
-        margin: 0 auto ;
-        br {
-          display: none;
-        }
-        span {
-          display: block;
-        }
+
+    @include media(600) {
+      max-width: 320px;
+      margin-bottom: 30px;
+
+      br {
+        display: none;
       }
     }
-    .section__text {
-      max-width: 1010px;
-      margin: 0 auto 65px;
-      @include media(1536){
-        margin-bottom: 40px;
-        }
-        @include media(600){
-            max-width: 320px;
-            margin-bottom: 30px;
-            br {
-                display: none;
-            }
-        }
-      p {
-        font-weight: 200;
-        font-size: 21px;
-        line-height: 31px;
-        margin-bottom: 21px;
-        @include media(1440){
-            font-size: 14px;
-            margin-bottom: 18px;
-            line-height: 20px;
-            }
-        @include media(990){
-            font-size: 12px;
-            line-height: 22px;
-            margin-bottom: 12px;
-            }
-        strong {
-          font-weight: 600;
-        }
-        .gradient {
-          font-weight: 600;
-        }
+
+    p {
+      font-weight: 200;
+      font-size: 21px;
+      line-height: 31px;
+      margin-bottom: 21px;
+
+      @include media(1440) {
+        font-size: 18px;
+        margin-bottom: 18px;
+        line-height: 24px;
+      }
+
+      @include media(990) {
+        font-size: 12px;
+        line-height: 22px;
+        margin-bottom: 12px;
+      }
+
+      strong {
+        font-weight: 600;
+      }
+
+      .gradient {
+        font-weight: 600;
+      }
     }
   }
 }
