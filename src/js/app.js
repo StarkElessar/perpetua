@@ -4,7 +4,7 @@ import { isWebp } from './modules'
 
 import { toggleSidebarButton, sidebar } from './helpers/elementsNodeList'
 import { deleteActiveClassName } from './helpers/deleteActiveClassName'
-import { floorNumbers } from './helpers/floorNumbers'
+import { round } from './helpers/round'
 
 import { toggleSidebarMenu } from './modules/toggleSidebarMenu'
 import { toggleAnimation } from './modules/toggleAnimation'
@@ -51,90 +51,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (video) video.currentTime = 0
 
-      if (destination.item.classList.contains('scene__1')) {
+      deleteActiveClassName('.box-text', 'active')
+
+      if (destination.anchor === 'scene__4') {
+        const video = destination.item.querySelector('video')
+        const articleText = destination.item.querySelector('.article-block')
+
+        articleText.style.opacity = 1
+        video.style.opacity = 1
+        
+        setTimeout(() => {
+          video.play()
+        }, 5000)
+
+        video.addEventListener('timeupdate', ({ target }) => {
+          console.log(round(target.currentTime));
+
+          toggleAnimation('spaceVideo', round(target.currentTime), fullpage_api)
+        })
+      }
+      if (destination.anchor === 'scene__5') {
         const video = destination.item.querySelector('video')
 
         video.addEventListener('timeupdate', ({ target }) => {
-          toggleAnimation(floorNumbers(target.currentTime))
-          toggleAnimation(floorNumbers(target.currentTime))
-        })
-      }
+          console.log(round(target.currentTime));
 
-      if (destination.item.classList.contains('scene__4')) {
-        const box1 = destination.item.querySelector('.box-1')
-        const box2 = destination.item.querySelector('.box-2')
-        const box3 = destination.item.querySelector('.box-3')
-        const video = destination.item.querySelector('video')
-
-        deleteActiveClassName('.box-text', 'active')
-
-        video.addEventListener('timeupdate', () => {
-          console.log(Math.round(video.currentTime))
-          if (Math.round(video.currentTime) === 2) {
-            box1.classList.add('active')
-          }
-          if (Math.round(video.currentTime) === 10) {
-            box1.classList.remove('active')
-          }
-          if (Math.round(video.currentTime) === 11) {
-            box2.classList.add('active')
-          }
-          if (Math.round(video.currentTime) === 17) {
-            box2.classList.remove('active')
-          }
-          if (Math.round(video.currentTime) === 18) {
-            box3.classList.add('active')
-          }
-          if (Math.round(video.currentTime) === 23) {
-            box3.classList.remove('active')
-          }
-          if (Math.round(video.currentTime) === 25) {
-            fullpage_api.moveTo(5)
-          }
-        })
-      }
-      if (destination.item.classList.contains('scene__5')) {
-        const box1 = destination.item.querySelector('.box-1')
-        const box2 = destination.item.querySelector('.box-2')
-        const box3 = destination.item.querySelector('.box-3')
-        const box4 = destination.item.querySelector('.box-4')
-        const video = destination.item.querySelector('video')
-
-        deleteActiveClassName('.box-text', 'active')
-
-        video.addEventListener('timeupdate', () => {
-          if (Math.round(video.currentTime) === 1) {
-            box1.classList.add('active')
-          }
-          if (Math.round(video.currentTime) === 7) {
-            box1.classList.remove('active')
-          }
-          if (Math.round(video.currentTime) === 8) {
-            box2.classList.add('active')
-          }
-          if (Math.round(video.currentTime) === 13) {
-            box2.classList.remove('active')
-          }
-          if (Math.round(video.currentTime) === 14) {
-            box3.classList.add('active')
-          }
-          if (Math.round(video.currentTime) === 20) {
-            box3.classList.remove('active')
-          }
-          if (Math.round(video.currentTime) === 23) {
-            box4.classList.add('active')
-          }
+          toggleAnimation('maskVideo', round(target.currentTime))
         })
       }
     },
     onLeave(origin, destination, direction) {
+      if (sidebar.classList.contains('active')) {
+        sidebar.classList.remove('active')
+      }
       if (origin.anchor === 'scene__1') {
         if (!toggleSidebarButton.classList.contains('_show-burger')) {
           toggleSidebarButton.classList.add('_show-burger')
         }
-        if (sidebar.classList.contains('active')) {
-          sidebar.classList.remove('active')
+        if (!sidebar.classList.contains('active')) {
+          sidebar.classList.add('active')
         }
+      }
+      if (origin.anchor === 'scene__4') {
+        console.log(origin);
+        const video = origin.item.querySelector('video')
+        const articleText = origin.item.querySelector('.article-block')
+        
+        video.style.opacity = 0
+        articleText.style.opacity = 0
       }
     },
   })
