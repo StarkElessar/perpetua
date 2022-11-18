@@ -132,35 +132,42 @@
 .section__text {
   max-width: 1010px;
   margin: 0 auto 65px;
-  text-align: center;
+
   @include media(1536) {
     margin-bottom: 40px;
   }
+
   @include media(600) {
     max-width: 320px;
     margin-bottom: 30px;
+
     br {
       display: none;
     }
   }
+
   p {
-    font-weight: 300;
+    font-weight: 200;
     font-size: 21px;
     line-height: 31px;
     margin-bottom: 21px;
+    text-align: center;
     @include media(1440) {
       font-size: 18px;
       margin-bottom: 18px;
       line-height: 24px;
     }
+
     @include media(990) {
       font-size: 12px;
       line-height: 22px;
       margin-bottom: 12px;
     }
+
     strong {
       font-weight: 600;
     }
+
     .gradient {
       font-weight: 600;
     }
@@ -168,31 +175,44 @@
 }
 
 .article-title {
-  font-size: 32px;
-  line-height: 56px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  font-family: "BunkenTech";
-  font-weight: 500;
-  text-align: center;
-  @include media(1536) {
-    font-size: 28px;
-    line-height: 40px;
-  }
-  @include media(990) {
-    font-size: 14px;
-    line-height: 28px;
-  }
-  @include media(600) {
-    max-width: 315px;
-    margin: 0 auto;
-    br {
-      display: none;
+    font-size: 32px;
+    line-height: 56px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-family: "BunkenTech";
+    font-weight: 500;
+    text-align: center;
+    .gradient-title {
+      font-size: 32px;
+      line-height: 56px;
+      @include media(1536) {
+        font-size: 24px;
+        line-height: 36px;
+      }
+      @include media(990) {
+        font-size: 14px;
+        line-height: 28px;
+      }
     }
-    span {
-      display: block;
+    @include media(1536) {
+      font-size: 24px;
+      line-height: 36px;
     }
-  }
+    @include media(990) {
+      font-size: 14px;
+      line-height: 28px;
+    }
+    @include media(600) {
+      max-width: 315px;
+      margin: 0 auto;
+      br {
+        display: none;
+
+      }
+      span {
+        display: block;
+      }
+    }
 }
 
 
