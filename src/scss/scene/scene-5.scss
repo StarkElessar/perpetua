@@ -115,7 +115,7 @@
             transition: all 1.5s ease-in-out;
         }
     }
-      &.box-1, &.box-2, &.box-3 {
+      &.box-1, &.box-2, &.box-3, &.box-4 {
         @include media (990) {
           top: auto;
           bottom: 0;

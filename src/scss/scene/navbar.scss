@@ -13,9 +13,9 @@
         height: 14px;
         transition: right 1200ms ease-in-out;
         &._show-burger {
-          right: 100px;
+          right: 25px;
           @include media(1366) {
-            right: 50px;
+            right: 25px;
           }
           @include media(600) {
             right: 25px;
@@ -46,7 +46,7 @@
     .navmenu {
         height: 100vh;
         width: 100%;
-        max-width: 550px;
+        max-width: 350px;
         position: fixed;
         transition: 1s ease-in-out all;
         bottom: 0;
@@ -60,12 +60,12 @@
             padding-top: 100px;
         }
         @include media(990){
-            max-width: 400px;
+            max-width: 300px;
         }
         &.active {
             transform: translateX(0);
             width: 100%;
-            max-width: 550px;
+            max-width: 350px;
             transition: 1s ease-in-out all;
             @include media(990){
                 max-width: 400px;
@@ -85,8 +85,8 @@
                 }
                 a {
                     text-align: left;
-                    font-size: 24px;
-                    line-height: 30px;
+                    font-size: 18px;
+                    line-height: 24px;
                     letter-spacing: 0em;
                     text-transform: uppercase;
                     font-family: 'BunkenTech';
@@ -97,8 +97,8 @@
                     &.text {
                         color: #ffffff;
                         text-decoration: none;
-                        font-size: 20px;
-                        line-height: 30px;
+                        font-size: 16px;
+                        line-height: 20px;
                         &:hover, &:active, &:focus {
                             background: none;;
                         }

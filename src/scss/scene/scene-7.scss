@@ -74,7 +74,7 @@
             max-width: 100%;
             margin: 0 auto;
             width: 100%;
-            @include media (990) {
+            @include media (1440) {
                 height: 50px;
                 border-radius: 25px;
             }
@@ -120,7 +120,7 @@
         }
         }
         .form__control {
-            @include media (990) {
+            @include media (1440) {
                 height: 50px;
                 border-radius: 25px;
             }
@@ -160,7 +160,7 @@
             line-height: 27px;
             top: 5px;
             right: 5px;
-            @include media (990) {
+            @include media (1440) {
                 height: 40px;
                 border-radius: 20px;
                 width: 94px;
