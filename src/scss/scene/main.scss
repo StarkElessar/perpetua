@@ -17,7 +17,7 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
-        object-position: center bottom;
+        object-position: center center;
       }
     }
   }
@@ -71,9 +71,9 @@
       letter-spacing: 0.2em;
       margin-bottom: 20px;
       font-family: "BunkenTech";
-      @include media (1366) {
-        font-size: 28px;
-        line-height: 56px;
+      @include media (1440) {
+        font-size: 26px;
+        line-height: 52px;
         margin-bottom: 15px;
         padding-top: 20px;
       }
@@ -88,7 +88,7 @@
       font-size: 20px;
       font-weight: 300;
       line-height: 30px;
-      @include media (1366) {
+      @include media (1440) {
         font-size: 16px;
         line-height: 22px;
       }
