@@ -27,16 +27,6 @@ toggleSidebarMenu()
 // headerFixed()
 // ====================================================================================================================================================
 document.addEventListener('DOMContentLoaded', () => {
-  const pageLoadedStartTime = Date.now()
-
-  document.querySelector('.mute-sound').onclick = () => {
-    const audio = new Audio('https://starkelessar.github.io/perpetua/files/audio/background-sound.mp3')
-    const timeClick = (Date.now() - pageLoadedStartTime) / 1000
-
-    audio.currentTime = timeClick
-    audio.play()
-  }
-
   new fullpage('#fullpage', {
     menu: '#navigation',
     css3: true,
@@ -59,10 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         articleText.style.opacity = 1
         video.style.opacity = 1
-        
-        setTimeout(() => {
-          video.play()
-        }, 5000)
 
         video.addEventListener('timeupdate', ({ target }) => {
           console.log(round(target.currentTime));
@@ -81,19 +67,12 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     },
     onLeave(origin, destination, direction) {
-      if (sidebar.classList.contains('active')) {
-        sidebar.classList.remove('active')
-      }
       if (origin.anchor === 'scene__1') {
         if (!toggleSidebarButton.classList.contains('_show-burger')) {
           toggleSidebarButton.classList.add('_show-burger')
         }
-        if (!sidebar.classList.contains('active')) {
-          sidebar.classList.add('active')
-        }
       }
       if (origin.anchor === 'scene__4') {
-        console.log(origin);
         const video = origin.item.querySelector('video')
         const articleText = origin.item.querySelector('.article-block')
         
