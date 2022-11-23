@@ -1,114 +1,164 @@
 .navbar {
-    position: absolute;
-    background: none;
-    .burger__menu {
-        display: flex;
-        flex-direction: column;
-        width: 40px;
-        position: fixed;
-        top: 100px;
-        right: -100px;
-        z-index: 10;
-        cursor: pointer;
-        height: 14px;
-        transition: right 1200ms ease-in-out;
-        &._show-burger {
-          right: 25px;
-          @include media(1366) {
-            right: 25px;
-          }
-          @include media(600) {
-            right: 25px;
-          }
-        }
-        @include media(1366){
-            top: 50px;
-            right: 50px;
-        }
-        @include media(600){
-            top: 25px;
-            right: 25px;
-        }
-        span {
-            cursor: pointer;
-            position: absolute;
-            width: 40px;
-            height: 2px;
-            background: #ffffff;
-            &:nth-child(2) {
-                top: 7px;
-            }
-            &:nth-child(3) {
-                top: 14px;
-            }
-        }
+  position: absolute;
+  background: none;
+  .burger__menu {
+    display: flex;
+    flex-direction: column;
+    width: 40px;
+    position: fixed;
+    top: 100px;
+    right: -100px;
+    z-index: 10;
+    cursor: pointer;
+    height: 14px;
+    transition: right 1200ms ease-in-out;
+    &._show-burger {
+      right: 25px;
+      @include media(1366) {
+        right: 25px;
+      }
+      @include media(600) {
+        right: 25px;
+      }
     }
-    .navmenu {
-        height: 100vh;
-        width: 100%;
-        max-width: 350px;
-        position: fixed;
-        transition: 1s ease-in-out all;
-        bottom: 0;
-        top: 0;
-        right: 0;
-        z-index: 5;
-        padding: 100px 40px 150px 30px;
-        background: #191516;
-        transform: translateX(100%);;
-        @include media(1366){
-            padding-top: 100px;
-        }
-        @include media(990){
-            max-width: 300px;
-        }
-        &.active {
-            transform: translateX(0);
-            width: 100%;
-            max-width: 350px;
-            transition: 1s ease-in-out all;
-            @include media(990){
-                max-width: 400px;
-            }
-        }
-        .nav {
-            display: flex;
-            width: 100%;
-            flex-direction: column;
-            li {
-                width: 100%;
-                text-align: left;
-                margin-bottom: 30px;
-                list-style: none;
-                @include media(990){
-                    margin-bottom: 25px;
-                }
-                a {
-                    text-align: left;
-                    font-size: 18px;
-                    line-height: 24px;
-                    letter-spacing: 0em;
-                    text-transform: uppercase;
-                    font-family: 'BunkenTech';
-                    @include media(990){
-                        font-size: 16px;
-                        line-height: 20px;
-                    }
-                    &.text {
-                        color: #ffffff;
-                        text-decoration: none;
-                        font-size: 16px;
-                        line-height: 20px;
-                        &:hover, &:active, &:focus {
-                            background: none;;
-                        }
-                        @include media(990){
-                            font-size: 14px;
-                            line-height: 18px;
-                        }
-                    }
-                }
-            }
-        }
+    @include media(1366) {
+      top: 50px;
+      right: 50px;
+    }
+    @include media(600) {
+      top: 25px;
+      right: 25px;
+    }
+    span {
+      cursor: pointer;
+      position: absolute;
+      width: 40px;
+      height: 2px;
+      background: #ffffff;
+      &:nth-child(2) {
+        top: 7px;
+      }
+      &:nth-child(3) {
+        top: 14px;
+      }
     }
   }
+  .navmenu {
+    height: 100vh;
+    width: 100%;
+    max-width: 350px;
+    position: fixed;
+    transition: 1s ease-in-out all;
+    bottom: 0;
+    top: 0;
+    right: 0;
+    z-index: 5;
+    padding: 150px 40px 150px 30px;
+    background: #191516;
+    transform: translateX(100%);
+    @include media(1366) {
+      padding-top: 100px;
+    }
+    @include media(990) {
+      max-width: 300px;
+    }
+    &.active {
+      transform: translateX(0);
+      width: 100%;
+      max-width: 350px;
+      transition: 1s ease-in-out all;
+      @include media(990) {
+        max-width: 400px;
+      }
+    }
+    .nav {
+      display: flex;
+      width: 100%;
+      flex-direction: column;
+      li {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 30px;
+        list-style: none;
+        @include media(990) {
+          margin-bottom: 25px;
+        }
+        a {
+          text-align: left;
+          font-size: 18px;
+          line-height: 24px;
+          letter-spacing: 0em;
+          text-transform: uppercase;
+          font-family: "BunkenTech";
+          @include media(990) {
+            font-size: 16px;
+            line-height: 20px;
+          }
+          &.text {
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 16px;
+            line-height: 20px;
+            &:hover,
+            &:active,
+            &:focus {
+              background: none;
+            }
+            @include media(990) {
+              font-size: 14px;
+              line-height: 18px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.start-sound {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  top: 80px;
+  left: 30px;
+  z-index: 100;
+  background: transparent;
+  border-radius: rem(6);
+  transition: $standartTrans;
+  &._on {
+    .start-sound__icon_muted {
+      opacity: 0;
+    }
+    .start-sound__icon_on {
+      opacity: 1;
+    }
+  }
+  &:hover {
+    background-color: rgba(#fff, 10%);
+  }
+  &:active {
+    background-color: rgba(#fff, 20%);
+  }
+  @include media(1366) {
+    top: 30px;
+  }
+  @include media(600) {
+    top: 15px;
+    left: 25px;
+  }
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: $standartTrans;
+    // .start-sound__icon_muted
+    &_muted {
+      opacity: 1;
+    }
+    // .start-sound__icon_on
+    &_on {
+      opacity: 0;
+    }
+  }
+}
