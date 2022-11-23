@@ -27,6 +27,31 @@ toggleSidebarMenu()
 // headerFixed()
 // ====================================================================================================================================================
 document.addEventListener('DOMContentLoaded', () => {
+  const startTimerPageLoaded = Date.now()
+  const audio = new Audio('https://starkelessar.github.io/perpetua/files/audio/background-sound.mp3')
+  let isPlay = false
+
+  const soundStartButton = document.querySelector('.start-sound')
+
+  soundStartButton.addEventListener('click', () => {
+    const timeClick = (Date.now() - startTimerPageLoaded) / 1000
+
+    isPlay = !isPlay
+
+    audio.currentTime = timeClick
+    audio.play()
+
+    soundStartButton.classList.toggle('_on')
+
+    if (!isPlay) {
+      console.log('Звук играет')
+      audio.volume = 0
+    } else {
+      audio.volume = 1
+      console.log('Звук не играет')
+    }
+  })
+
   new fullpage('#fullpage', {
     menu: '#navigation',
     css3: true,
