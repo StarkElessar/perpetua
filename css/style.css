@@ -548,6 +548,7 @@ html.fp-enabled {
 body {
   background: #000000;
   color: #ffffff;
+  font-weight: 300;
 }
 
 body .lock {
@@ -794,6 +795,15 @@ body .lock {
   transition: all 2s ease-in-out;
 }
 
+.scene__2.active .scene__2-block .gradient {
+  background: -webkit-gradient(linear, right top, left top, color-stop(20%, #ab00ff), to(#00fff6));
+  background: -o-linear-gradient(right, #ab00ff 20%, #00fff6 100%);
+  background: linear-gradient(to left, #ab00ff 20%, #00fff6 100%);
+  color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 .scene__2-title {
   font-family: "BunkenTech";
   font-weight: 500;
@@ -810,7 +820,7 @@ body .lock {
 }
 
 .scene__2 .section__text p {
-  font-weight: 300;
+  font-weight: 200;
   font-size: 32px;
   line-height: 42px;
   margin-bottom: 32px;
@@ -863,7 +873,7 @@ body .lock {
 }
 
 .scene__3 .section__text p {
-  font-weight: 300;
+  font-weight: 200;
   font-size: 21px;
   line-height: 31px;
   margin-bottom: 21px;
@@ -994,8 +1004,8 @@ body .lock {
 }
 
 .scene__4.active .article-block {
-  -webkit-animation: text-animation forwards 6s ease-in-out;
-          animation: text-animation forwards 6s ease-in-out;
+  -webkit-animation: text-animation forwards 8s ease-in-out;
+          animation: text-animation forwards 8s ease-in-out;
 }
 
 .scene__4 video {
@@ -1007,14 +1017,14 @@ body .lock {
 .section__text {
   max-width: 1010px;
   margin: 0 auto 65px;
-  text-align: center;
 }
 
 .section__text p {
-  font-weight: 300;
+  font-weight: 200;
   font-size: 21px;
   line-height: 31px;
   margin-bottom: 21px;
+  text-align: center;
 }
 
 .section__text p strong {
@@ -1033,6 +1043,11 @@ body .lock {
   font-family: "BunkenTech";
   font-weight: 500;
   text-align: center;
+}
+
+.article-title .gradient-title {
+  font-size: 32px;
+  line-height: 56px;
 }
 
 @-webkit-keyframes text-animation {
@@ -1231,8 +1246,8 @@ body .lock {
 
 .team__text p {
   font-weight: 300;
-  font-size: 20px;
-  line-height: 27px;
+  font-size: 14px;
+  line-height: 20px;
   margin-bottom: 20px;
 }
 
@@ -1578,6 +1593,51 @@ body .lock {
   text-decoration: none;
 }
 
+.footer__block .social__block .design {
+  font-size: 14px;
+  line-height: 16px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.footer__block .social .social__title {
+  margin-bottom: 22px;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+.footer__block .social .social__block {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.footer__block .social .social__block .box {
+  margin-right: 40px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.footer__block .social .social__block .box:last-child {
+  margin-right: 0;
+}
+
+.footer__block .social .social__block .box a {
+  color: #ffffff;
+  margin-bottom: 4px;
+  font-size: 14px;
+  line-height: 16px;
+  text-decoration: none;
+  opacity: 0.6;
+  font-weight: 400;
+}
+
 .navbar {
   position: absolute;
   background: none;
@@ -1604,7 +1664,7 @@ body .lock {
 }
 
 .navbar .burger__menu._show-burger {
-  right: 100px;
+  right: 25px;
 }
 
 .navbar .burger__menu span {
@@ -1626,7 +1686,7 @@ body .lock {
 .navbar .navmenu {
   height: 100vh;
   width: 100%;
-  max-width: 550px;
+  max-width: 350px;
   position: fixed;
   -webkit-transition: 1s ease-in-out all;
   -o-transition: 1s ease-in-out all;
@@ -1647,7 +1707,7 @@ body .lock {
       -ms-transform: translateX(0);
           transform: translateX(0);
   width: 100%;
-  max-width: 550px;
+  max-width: 350px;
   -webkit-transition: 1s ease-in-out all;
   -o-transition: 1s ease-in-out all;
   transition: 1s ease-in-out all;
@@ -1673,8 +1733,8 @@ body .lock {
 
 .navbar .navmenu .nav li a {
   text-align: left;
-  font-size: 24px;
-  line-height: 30px;
+  font-size: 18px;
+  line-height: 24px;
   letter-spacing: 0em;
   text-transform: uppercase;
   font-family: "BunkenTech";
@@ -1683,8 +1743,8 @@ body .lock {
 .navbar .navmenu .nav li a.text {
   color: #ffffff;
   text-decoration: none;
-  font-size: 20px;
-  line-height: 30px;
+  font-size: 16px;
+  line-height: 20px;
 }
 
 .navbar .navmenu .nav li a.text:hover,
@@ -1706,8 +1766,8 @@ body .lock {
 
 @media (max-width: 1536.98px) {
   .scene__3-title {
-    font-size: 28px;
-    line-height: 40px;
+    font-size: 24px;
+    line-height: 36px;
   }
 
   .scene__3 .section__text {
@@ -1718,9 +1778,14 @@ body .lock {
     margin-bottom: 40px;
   }
 
+  .article-title .gradient-title {
+    font-size: 24px;
+    line-height: 36px;
+  }
+
   .article-title {
-    font-size: 28px;
-    line-height: 40px;
+    font-size: 24px;
+    line-height: 36px;
   }
 }
 
@@ -1743,8 +1808,8 @@ body .lock {
   }
 
   .scene__2 .section__text p {
-    font-size: 28px;
-    line-height: 34px;
+    font-size: 24px;
+    line-height: 30px;
   }
 
   .scene__2 .gradient__title {
@@ -1762,11 +1827,46 @@ body .lock {
     margin-bottom: 18px;
     line-height: 24px;
   }
+
+  .team__title {
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 20px;
+  }
+
+  .team__people img {
+    max-width: 200px;
+    margin: 0 auto 15px;
+  }
+
+  .scene__7 .form .contact .form__control input {
+    height: 50px;
+    border-radius: 25px;
+  }
+
+  .scene__7 .form .subscribe .form__control {
+    height: 50px;
+    border-radius: 25px;
+  }
+
+  .scene__7 .form .subscribe .form__control button {
+    height: 40px;
+    border-radius: 20px;
+    width: 94px;
+    font-size: 12px;
+    line-height: 22px;
+    top: 4px;
+    right: 4px;
+  }
+
+  .footer {
+    padding: 50px 15px 50px;
+  }
 }
 
 @media (max-width: 1366.98px) {
   .navbar .burger__menu._show-burger {
-    right: 50px;
+    right: 25px;
   }
 
   .navbar .burger__menu {
@@ -1790,8 +1890,6 @@ body .lock {
   }
 
   .scene__2 .section__text p {
-    font-size: 24px;
-    line-height: 30px;
     margin-bottom: 30px;
   }
 
@@ -1911,6 +2009,11 @@ body .lock {
     margin-bottom: 12px;
   }
 
+  .article-title .gradient-title {
+    font-size: 14px;
+    line-height: 28px;
+  }
+
   .article-title {
     font-size: 14px;
     line-height: 28px;
@@ -1951,7 +2054,8 @@ body .lock {
 
   .scene__5.active .box-text.box-1,
   .scene__5.active .box-text.box-2,
-  .scene__5.active .box-text.box-3 {
+  .scene__5.active .box-text.box-3,
+  .scene__5.active .box-text.box-4 {
     top: auto;
     bottom: 0;
     right: 0;
@@ -2010,7 +2114,6 @@ body .lock {
 
   .team__people img {
     max-width: 180px;
-    margin: 0 auto 15px;
   }
 
   .team__people .name {
@@ -2045,11 +2148,6 @@ body .lock {
     margin-bottom: 14px;
   }
 
-  .scene__7 .form .contact .form__control input {
-    height: 50px;
-    border-radius: 25px;
-  }
-
   .scene__7 .form .social__block {
     margin-bottom: 50px;
   }
@@ -2067,27 +2165,12 @@ body .lock {
     margin-bottom: 30px;
   }
 
-  .scene__7 .form .subscribe .form__control {
-    height: 50px;
-    border-radius: 25px;
-  }
-
-  .scene__7 .form .subscribe .form__control button {
-    height: 40px;
-    border-radius: 20px;
-    width: 94px;
-    font-size: 12px;
-    line-height: 22px;
-    top: 4px;
-    right: 4px;
-  }
-
   .footer__block.two .copy {
     margin-right: 30px;
   }
 
   .navbar .navmenu {
-    max-width: 400px;
+    max-width: 300px;
   }
 
   .navbar .navmenu.active {
@@ -2262,6 +2345,14 @@ body .lock {
   }
 
   .footer__block .social__block .box a {
+    margin: 0 15px;
+  }
+
+  .footer__block .social .social {
+    text-align: center;
+  }
+
+  .footer__block .social .social__block .box a {
     margin-bottom: 15px;
   }
 
