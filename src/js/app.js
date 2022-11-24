@@ -64,13 +64,14 @@ document.addEventListener('DOMContentLoaded', () => {
     afterLoad(origin, destination, direction, trigger) {
       const video = destination.item.querySelector('video') || null
 
+      console.log(trigger);
+
       if (video) video.currentTime = 0
 
       deleteActiveClassName('.box-text', 'active')
 
       if (destination.anchor === 'scene__4') {
         const video = destination.item.querySelector('video')
-        const articleText = destination.item.querySelector('.article-block')
 
         video.style.opacity = 1
 
@@ -94,7 +95,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (origin.anchor === 'scene__4') {
         const video = origin.item.querySelector('video')
-        const articleText = origin.item.querySelector('.article-block')
         
         video.style.opacity = 0
       }
