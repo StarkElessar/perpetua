@@ -55,7 +55,6 @@
           top: 50px;
           right: 70px;
         }
-
       }
       &.box-3 {
         bottom: 133px;
@@ -75,7 +74,6 @@
           left: 5px;
         }
       }
-
       max-height: 0;
       overflow: hidden;
       padding: 0 80px 0 70px;
@@ -152,8 +150,10 @@
         }
       }
     }
-    .article-block.active {
-      animation: text-animation forwards 12s ease-in-out;
+    .article-block {
+      opacity: 0;
+      visibility: hidden;
+      transition: all 650ms ease-in-out;
     }
   }
   video {
@@ -206,25 +206,16 @@
 }
 
 .article-title {
+  font-size: 32px;
+  line-height: 56px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-family: "BunkenTech";
+  font-weight: 500;
+  text-align: center;
+  .gradient-title {
     font-size: 32px;
     line-height: 56px;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    font-family: "BunkenTech";
-    font-weight: 500;
-    text-align: center;
-    .gradient-title {
-      font-size: 32px;
-      line-height: 56px;
-      @include media(1536) {
-        font-size: 24px;
-        line-height: 36px;
-      }
-      @include media(990) {
-        font-size: 14px;
-        line-height: 28px;
-      }
-    }
     @include media(1536) {
       font-size: 24px;
       line-height: 36px;
@@ -233,36 +224,43 @@
       font-size: 14px;
       line-height: 28px;
     }
-    @include media(600) {
-      max-width: 315px;
-      margin: 0 auto;
-      br {
-        display: none;
-
-      }
-      span {
-        display: block;
-      }
+  }
+  @include media(1536) {
+    font-size: 24px;
+    line-height: 36px;
+  }
+  @include media(990) {
+    font-size: 14px;
+    line-height: 28px;
+  }
+  @include media(600) {
+    max-width: 315px;
+    margin: 0 auto;
+    br {
+      display: none;
     }
+    span {
+      display: block;
+    }
+  }
 }
 
+.scene__3 {
+  &.active {
+    .article-block {
+      animation: text-animation forwards 5s ease-in-out;
+    }
+  }
+}
 
 @keyframes text-animation {
   0% {
     max-height: 0;
     overflow: hidden;
-  } 58% {
-    overflow: hidden;
-    max-height: 100%;
-    opacity: 1;
-  } 
-  90% {
-    overflow: hidden;
-    max-height: 100%;
-    opacity: 1;
   }
   100% {
     overflow: hidden;
-    opacity: 0;
+    max-height: 100%;
+    opacity: 1;
   }
 }

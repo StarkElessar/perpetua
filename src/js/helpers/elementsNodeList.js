@@ -8,6 +8,7 @@ const boxAsset = document.querySelector('[data-asset]')
 const boxGeneration = document.querySelector('[data-generation]')
 const boxSpiral = document.querySelector('[data-spiral]')
 const boxCapsule = document.querySelector('[data-capsule]')
+const dataCollectionLink = sidebar.querySelector('[href="#scene__4"]')
 
 export {
   toggleSidebarButton,
@@ -20,4 +21,5 @@ export {
   boxGeneration,
   boxSpiral,
   boxCapsule,
+  dataCollectionLink
 }
