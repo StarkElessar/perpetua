@@ -4,8 +4,12 @@
         display: none;
     }
     .video__bg {
+      video {
+        object-position: center top;
+      }
         @include media (990) {
           height: 90%;
+
           &::before {
             content: "";
             position: absolute;
@@ -96,7 +100,7 @@
           left: 192px;
           opacity: 0;
           @include media(1536) {
-            left: 0px;
+            left: 50px;
           }
           &::before {
             background: none;

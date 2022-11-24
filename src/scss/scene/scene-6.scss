@@ -69,10 +69,8 @@
         font-size: 14px;
         line-height: 20px;
         margin-bottom: 20px;
-        @include media (1280) {
-            font-size: 16px;
-            line-height: 20px;
-            margin-bottom: 16px;
+        @include media (1440) {
+          margin-bottom: 14px;
           }
           @include media (990) {
             font-size: 12px;
@@ -95,7 +93,7 @@
         max-width: 253px;
         width: 100%;
         @include media (990) {
-            max-width: 50%;
+            max-width: 49%;
             margin: 0 auto;
         }
         &:last-child {
@@ -108,7 +106,7 @@
         margin-bottom: 30px;
         @include media (1440) {
             max-width: 200px;
-            margin: 0 auto 15px;
+            margin: 0 auto 10px;
         }
         @include media (990) {
             max-width: 180px;
@@ -122,6 +120,9 @@
         font-size: 24px;
         line-height: 44px;
         margin-bottom: 2px;
+        @include media (1440) {
+          line-height: 30px;
+      }
         @include media (990) {
             font-size: 12px;
             line-height: 22px;
@@ -142,7 +143,7 @@
 
   @media (max-height: 768px) {
     .team__people .box {
-        max-width: 180px;
+        max-width: 160px;
         img {
             margin-bottom: 12px;
         }
