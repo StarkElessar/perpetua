@@ -2,7 +2,7 @@ import fullpage from 'fullpage.js'
 
 import { isWebp } from './modules'
 
-import { toggleSidebarButton, sidebar } from './helpers/elementsNodeList'
+import { toggleSidebarButton, sidebar, dataCollectionLink } from './helpers/elementsNodeList'
 import { deleteActiveClassName } from './helpers/deleteActiveClassName'
 import { round } from './helpers/round'
 
@@ -76,8 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
         video.style.opacity = 1
 
         video.addEventListener('timeupdate', ({ target }) => {
-          console.log(round(target.currentTime));
-
           toggleAnimation('spaceVideo', round(target.currentTime), fullpage_api)
         })
       }
@@ -85,8 +83,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const video = destination.item.querySelector('video')
 
         video.addEventListener('timeupdate', ({ target }) => {
-          console.log(round(target.currentTime));
-
           toggleAnimation('maskVideo', round(target.currentTime))
         })
       }
@@ -104,6 +100,6 @@ document.addEventListener('DOMContentLoaded', () => {
         video.style.opacity = 0
         articleText.style.opacity = 0
       }
-    },
+    }
   })
 })
