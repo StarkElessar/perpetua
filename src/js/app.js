@@ -72,7 +72,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const video = destination.item.querySelector('video')
         const articleText = destination.item.querySelector('.article-block')
 
-        articleText.style.opacity = 1
         video.style.opacity = 1
 
         video.addEventListener('timeupdate', ({ target }) => {
@@ -98,7 +97,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const articleText = origin.item.querySelector('.article-block')
         
         video.style.opacity = 0
-        articleText.style.opacity = 0
       }
     }
   })
