@@ -11,13 +11,13 @@ import {
 const toggleAnimation = (video, time, api = null) => {
   const timeToActionMapping = {
     spaceVideo: {
-      12: () => boxCollection.classList.add('active'),
-      20: () => boxCollection.classList.remove('active'),
-      21: () => boxSignature.classList.add('active'),
-      27: () => boxSignature.classList.remove('active'),
-      29: () => boxConversion.classList.add('active'),
-      34: () => boxConversion.classList.remove('active'),
-      36: () => api.moveTo(4),
+      2: () => boxCollection.classList.add('active'),
+      10: () => boxCollection.classList.remove('active'),
+      11: () => boxSignature.classList.add('active'),
+      17: () => boxSignature.classList.remove('active'),
+      18: () => boxConversion.classList.add('active'),
+      23: () => boxConversion.classList.remove('active'),
+      24: () => api.moveTo(4),
     },
     maskVideo: {
       1: () => boxAsset.classList.add('active'),

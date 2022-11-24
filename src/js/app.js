@@ -2,7 +2,7 @@ import fullpage from 'fullpage.js'
 
 import { isWebp } from './modules'
 
-import { toggleSidebarButton, sidebar, dataCollectionLink } from './helpers/elementsNodeList'
+import { toggleSidebarButton, sidebar, dataCollectionLink, dataExtractionLink } from './helpers/elementsNodeList'
 import { deleteActiveClassName } from './helpers/deleteActiveClassName'
 import { round } from './helpers/round'
 
@@ -53,8 +53,10 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   new fullpage('#fullpage', {
+    anchors: ['scene__1','scene__2','scene__3','scene__4','scene__5','scene__6','scene__7','scene__8',],
     menu: '#navigation',
-    css3: true,
+    animateAnchor: false,
+    css3: true, 
     scrollingSpeed: 1500,
     slidesNavPosition: 'bottom',
     lazyLoading: true,
@@ -63,6 +65,11 @@ document.addEventListener('DOMContentLoaded', () => {
     licenseKey: 'KH50H-8SVN7-KQ07H-MJ62I-MDXUO',
     afterLoad(origin, destination, direction, trigger) {
       const video = destination.item.querySelector('video') || null
+      
+      if (trigger === 'menu') {
+        console.log('Переход был по клику в меню')
+        sidebar.classList.remove('active')
+      }
 
       if (video) video.currentTime = 0
 
@@ -70,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (destination.anchor === 'scene__4') {
         const video = destination.item.querySelector('video')
-        const articleText = destination.item.querySelector('.article-block')
+
 
         video.style.opacity = 1
 
@@ -94,7 +101,6 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (origin.anchor === 'scene__4') {
         const video = origin.item.querySelector('video')
-        const articleText = origin.item.querySelector('.article-block')
         
         video.style.opacity = 0
       }
