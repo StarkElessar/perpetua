@@ -6,5 +6,5 @@ node_modules
 package-lock.json
 gulp/version.json
 backup
-src/mailPost.php
+src/files/mailPost.php
 src/.temporary_cache
