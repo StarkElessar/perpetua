@@ -27,6 +27,8 @@
         flex-direction: column;
       }
       .logo {
+        max-width: 240px;
+        width: 100%;
         @include media(600) {
           margin-bottom: 30px;
         }
