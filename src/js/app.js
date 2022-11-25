@@ -106,4 +106,34 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   })
+
+  sidebar.addEventListener('click', ({ target }) => {
+    console.log(target);
+
+    sidebar.classList.remove('active')
+    
+    const videoScene4 = document.querySelector('[data-scene-4]')
+
+    if (target.hasAttribute('data-link-collection')) {
+      console.log('Клик был на collection')
+      deleteActiveClassName('.box-text', 'active')
+
+      videoScene4.currentTime = 2
+      videoScene4.play()
+    }
+    if (target.hasAttribute('data-link-extraction')) {
+      console.log('Клик был на extraction')
+      deleteActiveClassName('.box-text', 'active')
+
+      videoScene4.currentTime = 11
+      videoScene4.play()
+    }
+    if (target.hasAttribute('data-link-conversion')) {
+      console.log('Клик был на conversion')
+      deleteActiveClassName('.box-text', 'active')
+
+      videoScene4.currentTime = 18
+      videoScene4.play()
+    }
+  })
 })

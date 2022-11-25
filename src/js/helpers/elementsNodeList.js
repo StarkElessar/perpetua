@@ -10,6 +10,7 @@ const boxSpiral = document.querySelector('[data-spiral]')
 const boxCapsule = document.querySelector('[data-capsule]')
 const dataCollectionLink = sidebar.querySelector('[data-link-collection]')
 const dataExtractionLink = sidebar.querySelector('[data-link-extraction]')
+const dataConversionLink = sidebar.querySelector('[data-link-conversion]')
 
 export {
   toggleSidebarButton,
@@ -23,5 +24,6 @@ export {
   boxSpiral,
   boxCapsule,
   dataCollectionLink,
-  dataExtractionLink
+  dataExtractionLink,
+  dataConversionLink
 }
