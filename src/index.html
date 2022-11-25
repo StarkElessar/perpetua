@@ -224,10 +224,8 @@
           </div>
         </div>
         <div class="form">
-          <h2 class="form__title">
-            Contact Us
-          </h2>
-          <form enctype="multipart/form-data" method="post" id="form" onsubmit="send(event, 'files/mailPost.php')" class="contact">
+          <h2 class="form__title">Contact Us</h2>
+          <form id="contactForm">
             <div class="form__control">
               <label for="first_name">First Name</label>
               <input type="text" name="first_name" id="first_name">
@@ -250,13 +248,12 @@
             <a href="#">Discord</a>
             <a href="#">Twitter</a>
           </div>
-          <form enctype="multipart/form-data" method="post" onsubmit="send(event, 'files/mailPostNotify.php')"  class="subscribe">
+          <form class="subscribe">
             <h3 class="subscribe__title">Enroll in Genesis e-mail</h3>
             <div class="form__control">
               <input type="email" name="email" placeholder="Your e-mail">
               <button type="submit">Notify Me</button>
             </div>
-
           </form>
         </div>
       </section>
