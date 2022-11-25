@@ -71,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebar.classList.remove('active')
       }
 
-      if (video) video.currentTime = 0
+      // if (video) video.currentTime = 0
 
       deleteActiveClassName('.box-text', 'active')
 
