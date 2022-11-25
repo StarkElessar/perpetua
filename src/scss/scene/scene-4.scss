@@ -73,6 +73,9 @@
           bottom: 50px;
           left: 5px;
         }
+        @include media(1440) {
+          max-width: 550px;
+        }
       }
       max-height: 0;
       overflow: hidden;
