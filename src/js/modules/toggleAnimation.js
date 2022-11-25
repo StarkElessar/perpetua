@@ -17,7 +17,7 @@ const toggleAnimation = (video, time, api = null) => {
       17: () => boxSignature.classList.remove('active'),
       18: () => boxConversion.classList.add('active'),
       23: () => boxConversion.classList.remove('active'),
-      24: () => api.moveTo(4),
+      24: () => api.moveTo(5),
     },
     maskVideo: {
       1: () => boxAsset.classList.add('active'),
