@@ -1085,6 +1085,7 @@ body .lock {
 .scene__5.active .box-text.box-3 {
   bottom: 66px;
   left: 173px;
+  padding: 0 50px 0 40px;
 }
 
 .scene__5.active .box-text.box-3 h2 {
@@ -1477,6 +1478,11 @@ body .lock {
   margin-bottom: 110px;
 }
 
+.footer__block.one .logo {
+  max-width: 240px;
+  width: 100%;
+}
+
 .footer__block.two {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -1852,6 +1858,10 @@ body .lock {
 
   .scene__2 .gradient__title {
     font-size: 34px;
+  }
+
+  .scene__4.active .box-text.box-3 {
+    max-width: 550px;
   }
 
   .scene__4.active .box-text {
