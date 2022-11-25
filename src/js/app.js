@@ -8,6 +8,7 @@ import { round } from './helpers/round'
 
 import { toggleSidebarMenu } from './modules/toggleSidebarMenu'
 import { toggleAnimation } from './modules/toggleAnimation'
+import { sendingDataForms } from './modules/sendingDataForms'
 
 /* Раскомментировать для использования */
 // import { MousePRLX } from './libs/parallaxMouse'
@@ -136,4 +137,6 @@ document.addEventListener('DOMContentLoaded', () => {
       videoScene4.play()
     }
   })
+
+  sendingDataForms()
 })
