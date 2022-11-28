@@ -6,7 +6,7 @@ import { toggleSidebarButton, sidebar, dataCollectionLink, dataExtractionLink } 
 import { deleteActiveClassName } from './helpers/deleteActiveClassName'
 import { round } from './helpers/round'
 
-import { VideoResponser } from './modules/VideoResponser'
+import VideoResponser from './helpers/VideoResponser'
 import { toggleSidebarMenu } from './modules/toggleSidebarMenu'
 import { toggleAnimation } from './modules/toggleAnimation'
 import { sendingDataForms } from './modules/sendingDataForms'
@@ -29,6 +29,7 @@ toggleSidebarMenu()
 // headerFixed()
 // ====================================================================================================================================================
 document.addEventListener('DOMContentLoaded', () => {
+  new VideoResponser('#intro-video')
   const startTimerPageLoaded = Date.now()
   const audio = new Audio('https://starkelessar.github.io/perpetua/files/audio/background-sound.mp3')
   let isPlay = false

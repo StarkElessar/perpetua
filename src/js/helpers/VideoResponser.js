@@ -26,24 +26,18 @@ class VideoResponser {
     window.addEventListener('resize', () => this.responseVideo(this.options))
   }
 
-  /**
-   * Change src value of video link to fit screen width
-   *
-   * @param {Object} options object with options
-   */
   responseVideo(options) {
     const { selector, breakpoints } = options // get options
+    console.log(options);
     const $video = document.querySelector(selector)
     const widthNow = $video.getAttribute('data-width-now') || null
-    const maxBreakpoint = Math.max.apply(
-      Math,
-      Object.keys(breakpoints)
-        .filter((key) => key <= document.body.clientWidth)
-        .map(Number)
-    )
-    const nowBreakpoint = maxBreakpoint || 'default' // choose either the maximum value, if not, then the default
+    console.log(widthNow);
+    const maxBreakpoint = Math.max( ...Object.keys(breakpoints).filter((key) => key <= document.body.clientWidth))
+    console.log(maxBreakpoint);
 
-    if (widthNow && widthNow == nowBreakpoint) return // check if the video needs to be changed
+    const nowBreakpoint = maxBreakpoint || 'default';
+
+    if(widthNow && widthNow == nowBreakpoint) return;
 
     $video.setAttribute('data-width-now', nowBreakpoint)
     $video.src = breakpoints[nowBreakpoint].src
