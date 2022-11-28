@@ -6,6 +6,7 @@ import { toggleSidebarButton, sidebar, dataCollectionLink, dataExtractionLink } 
 import { deleteActiveClassName } from './helpers/deleteActiveClassName'
 import { round } from './helpers/round'
 
+import { VideoResponser } from './modules/VideoResponser'
 import { toggleSidebarMenu } from './modules/toggleSidebarMenu'
 import { toggleAnimation } from './modules/toggleAnimation'
 import { sendingDataForms } from './modules/sendingDataForms'
