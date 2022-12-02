@@ -31,7 +31,7 @@ toggleSidebarMenu()
 // headerFixed()
 // ====================================================================================================================================================
 document.addEventListener('DOMContentLoaded', () => {
-  new VideoResponser('#intro-video')
+  // new VideoResponser('#intro-video')
   const startTimerPageLoaded = Date.now()
   const audio = new Audio('https://starkelessar.github.io/perpetua/files/audio/background-sound.mp3')
   let isPlay = false
