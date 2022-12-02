@@ -7,7 +7,7 @@ import { deleteActiveClassName } from './helpers/deleteActiveClassName'
 import { round } from './helpers/round'
 
 
-import VideoResponser from './helpers/VideoResponser'
+import setAdaptiveVideo from './modules/setAdaptiveVideo'
 
 import { toggleSidebarMenu } from './modules/toggleSidebarMenu'
 import { toggleAnimation } from './modules/toggleAnimation'
@@ -30,8 +30,13 @@ toggleSidebarMenu()
 // Фиксированный header ====================================================================================================================================================
 // headerFixed()
 // ====================================================================================================================================================
+window.addEventListener('resize', () => {
+  setAdaptiveVideo
+  location.reload()
+})
 document.addEventListener('DOMContentLoaded', () => {
-  // new VideoResponser('#intro-video')
+  setAdaptiveVideo()
+  
   const startTimerPageLoaded = Date.now()
   const audio = new Audio('https://starkelessar.github.io/perpetua/files/audio/background-sound.mp3')
   let isPlay = false
