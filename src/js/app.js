@@ -114,6 +114,13 @@ document.addEventListener('DOMContentLoaded', () => {
         
         video.style.opacity = 0
       }
+      if (origin.anchor === 'scene__5') {
+        if (destination.anchor === 'scene__4') {
+          const video = destination.item.querySelector('video')
+
+          video.currentTime = 0
+        }
+      }
     }
   })
 
