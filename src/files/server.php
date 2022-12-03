@@ -46,10 +46,10 @@ try {
   // Проверяем отравленность сообщения
   if ($mail->send()) {
     $result = "success";
-    $msg = "Message sent successfully"
+    $msg = "Message sent successfully";
   } else {
     $result = "error";
-    $msg = "Message not sent. Try again later"
+    $msg = "Message not sent. Try again later";
   }
 
 } catch (Exception $e) {
