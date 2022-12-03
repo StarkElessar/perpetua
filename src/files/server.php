@@ -1,4 +1,6 @@
 <?php
+  use PHPMailer\PHPMailer\PHPMailer;
+  use PHPMailer\PHPMailer\Exception;
   // Файлы phpmailer
   require 'phpmailer/SMTP.php';
   require 'phpmailer/Exception.php';
