@@ -1,15 +1,11 @@
 <?php
 // Файлы phpmailer
-require 'php/PHPMailer.php';
-require 'php/SMTP.php';
-require 'php/Exception.php';
+require 'phpmailer/PHPMailer.php';
+require 'phpmailer/SMTP.php';
+require 'phpmailer/Exception.php';
 
 // Переменные, которые отправляет пользователь
-$name = $_POST['your-name'];
 $email = $_POST['email'];
-$company = $_POST['company'];
-$phone = $_POST['phone'];
-$message = $_POST['message'];
 
 // Формирование самого письма
 $title = "Here is the new subject";
