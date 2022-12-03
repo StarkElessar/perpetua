@@ -11,22 +11,6 @@
       overflow: hidden;
       object-fit: cover;
       object-position: center bottom;
-      @include media(990){
-        height: 60vh;
-        position: absolute;
-        top: 0;
-        &::before {
-          content: "";
-          z-index: 1;
-          position: absolute;
-          height: 30px;
-          width: 100%;
-          left: 0;
-          right: 0;
-          bottom: 0px;
-          background: linear-gradient(180deg, #181516 0%, #000000 100%);
-        }
-    }
     }
     video {
       width: 100%;

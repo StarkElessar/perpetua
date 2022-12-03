@@ -7,31 +7,6 @@
       video {
         object-position: center top;
       }
-        @include media (990) {
-          height: 90%;
-
-          &::before {
-            content: "";
-            position: absolute;
-            bottom: -1px;
-            left: 0;
-            right: 0;
-            height: 100px;
-            width: 100%;
-            background: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 100%);
-          }
-          &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 100px;
-            width: 100%;
-            transform: rotate(180deg);
-            background: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 100%);
-          }
-        }
         @include media (768) {
             height: 60%;
             top: 10%;
