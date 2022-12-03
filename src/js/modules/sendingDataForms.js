@@ -10,7 +10,7 @@ const sendingDataForms = () => {
       try {
         const formData = new FormData(form)
         const {  message, result } = await postData('./../files/server.php', formData)
-
+        
         textMessage.style.display = 'block'
         textMessage.innerText = 'Sending...'
 
