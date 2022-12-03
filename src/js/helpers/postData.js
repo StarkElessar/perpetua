@@ -1,7 +1,7 @@
 const postData = async (url, data) => {
   const result = await fetch(url, {
     method: 'POST',
-    body: JSON.stringify(data),
+    body: data,
   })
 
   return await result.json()
