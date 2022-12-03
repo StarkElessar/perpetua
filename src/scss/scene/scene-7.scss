@@ -83,6 +83,7 @@
         .d-none {
           display: none;
         }
+
       }
       .social__block {
         margin-bottom: 90px;
@@ -196,6 +197,15 @@
           animation: form 6s ease-in-out;
         }
       }
+    }
+
+    .send-message {
+      display: none;
+      text-align: center;    
+      font-size: 12px;
+      line-height: 22px;
+      margin: 0 auto 14px;
+      text-decoration: underline;
     }
   }
   @keyframes form {
