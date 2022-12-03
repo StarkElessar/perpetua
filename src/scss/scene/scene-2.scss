@@ -18,9 +18,6 @@
     @include media(1440) {
       height: 30px;
     }
-    @include media(990) {
-      content: none;
-    }
   }
 
   &-block {
