@@ -7,13 +7,13 @@ const sendingDataForms = () => {
       event.preventDefault()
       const textMessage = form.querySelector('.send-message')
       
+      textMessage.style.display = 'block'
+      textMessage.innerText = 'Sending...'
+
       try {
         const formData = new FormData(form)
         const {  message, result } = await postData('./../files/server.php', formData)
         
-        textMessage.style.display = 'block'
-        textMessage.innerText = 'Sending...'
-
         if (result === 'success') {
           console.log(message);
           textMessage.innerText = message
