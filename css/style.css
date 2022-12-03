@@ -2010,6 +2010,30 @@ body .lock {
     display: none;
   }
 
+  .scene__1 .head__block {
+    height: 60vh;
+    position: absolute;
+    top: 0;
+  }
+
+  .scene__1 .head__block::before {
+    content: "";
+    z-index: 1;
+    position: absolute;
+    height: 30px;
+    width: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0px;
+    background: -webkit-gradient(linear, left top, left bottom, from(#181516), to(#000000));
+    background: -o-linear-gradient(top, #181516 0%, #000000 100%);
+    background: linear-gradient(180deg, #181516 0%, #000000 100%);
+  }
+
+  .scene__2::before {
+    content: none;
+  }
+
   .scene__2-title {
     font-size: 22px;
     line-height: 40px;
@@ -2025,6 +2049,23 @@ body .lock {
   .scene__2 .gradient__title {
     font-size: 22px;
     line-height: 40px;
+  }
+
+  .scene__4 .video__bg {
+    height: 80%;
+  }
+
+  .scene__4 .video__bg::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    width: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(#000));
+    background: -o-linear-gradient(rgba(0, 0, 0, 0) 0%, #000 100%);
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 100%);
   }
 
   .scene__4.active .box-text.box-1,
@@ -2061,6 +2102,39 @@ body .lock {
   .article-title {
     font-size: 14px;
     line-height: 28px;
+  }
+
+  .scene__5 .video__bg {
+    height: 90%;
+  }
+
+  .scene__5 .video__bg::before {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 100px;
+    width: 100%;
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(#000));
+    background: -o-linear-gradient(rgba(0, 0, 0, 0) 0%, #000 100%);
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 100%);
+  }
+
+  .scene__5 .video__bg::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100px;
+    width: 100%;
+    -webkit-transform: rotate(180deg);
+        -ms-transform: rotate(180deg);
+            transform: rotate(180deg);
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(#000));
+    background: -o-linear-gradient(rgba(0, 0, 0, 0) 0%, #000 100%);
+    background: linear-gradient(rgba(0, 0, 0, 0) 0%, #000 100%);
   }
 
   .scene__5.active .box-text.box-1,
