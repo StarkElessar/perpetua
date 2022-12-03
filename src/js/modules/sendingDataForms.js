@@ -15,7 +15,7 @@ const sendingDataForms = () => {
 
       try {
         const formData = new FormData(form)
-        const {  message, result } = await postData(originUrl, formData)
+        const { message, result } = await postData(localUrl, formData)
         
         if (result === 'success') {
           console.log(message);
