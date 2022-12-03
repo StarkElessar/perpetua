@@ -1,20 +1,8 @@
 <?php
-  use PHPMailer\PHPMailer\PHPMailer;
-  use PHPMailer\PHPMailer\Exception;
-
   // Файлы phpmailer
-  require 'php/PHPMailer.php';
-  require 'php/SMTP.php';
-  require 'php/Exception.php';
-
-  // Настройки PHPMailer
-  $mail = new PHPMailer(true);
-  $mail -> CharSet = 'UTF-8';
-  $mail -> IsHTML(true);
-
-  $mail -> setFrom('no-reply@perpetuadna.com', 'Perpetua DNA subscription');
-  $mail -> addAddress('serj.elessar@gmail.com');
-  $mail -> Subject = 'Here is the new subject';
+  require 'phpmailer/SMTP.php';
+  require 'phpmailer/Exception.php';
+  require 'phpmailer/PHPMailer.php';
 
   // Переменные, которые отправляет пользователь
   $name = $_POST['your-name'];
@@ -22,6 +10,22 @@
   $company = $_POST['company'];
   $phone = $_POST['phone'];
   $message = $_POST['message'];
+
+  // Настройки PHPMailer
+  $mail = new PHPMailer(true);
+  $mail -> CharSet = 'UTF-8';
+  $mail -> IsHTML(true);
+
+  $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
+  $mail->Host = 'yttrium.cloudhosting.uk';// Specify main and backup SMTP servers
+  $mail->Username = 'no-reply@perpetuadna.com';// SMTP username
+  $mail->Password = '8h[h0&h9^tZx';// SMTP password
+  $mail->SMTPSecure = 'tls';// Enable TLS encryption, `ssl` also accepted
+  $mail->Port = 587;
+
+  $mail -> setFrom('no-reply@perpetuadna.com', 'Perpetua DNA subscription');
+  $mail -> addAddress('serj.elessar@gmail.com');
+  $mail -> Subject = 'Here is the new subject';
 
   $body = "
     <h2>here is your new subscriber:</h2>
@@ -40,49 +44,6 @@
     $result = "error";
     $msg = "Message not sent. Try again later";
   }
-
-  // // Формирование самого письма
-  // $title = "Here is the new subject";
-  // $body = "
-  // <h2>here is your new subscriber:</h2>
-  // <b>Email:</b> $email<br><br>
-  // ";
-
-  // try {
-  //   $mail->isSMTP();   
-  //   $mail->CharSet = "UTF-8";
-  //   $mail->SMTPAuth   = true;
-  //   //$mail->SMTPDebug = 2;
-  //   $mail->Debugoutput = function($str, $level) {$GLOBALS['status'][] = $str;};
-  //   $mail->Host = 'yttrium.cloudhosting.uk';  // Specify main and backup SMTP servers
-  //   $mail->Username = 'no-reply@perpetuadna.com';                 // SMTP username
-  //   $mail->Password = '8h[h0&h9^tZx';                           // SMTP password
-  //   $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
-  //   $mail->Port = 587;   
-
-  //   $mail->setFrom('no-reply@perpetuadna.com', 'Perpetua DNA subscription');
-  //   // $mail->addAddress('genesisenrol@perpetuadna.com', 'Perpetua DNA subscription');
-  //   $mail->addAddress('serj.elessar@gmail.com', 'Perpetua DNA subscription');
-  //   // $mail->addAddress('perpetua@perpetuadna.com', 'Perpetua DNA subscription'); // Add a recipient
-
-  //   // Отправка сообщения
-  //   $mail->isHTML(true);
-  //   $mail->Subject = $title;
-  //   $mail->Body = $body;    
-
-  //   // Проверяем отравленность сообщения
-  //   if ($mail->send()) {
-  //     $result = "success";
-  //     $msg = "Message sent successfully";
-  //   } else {
-  //     $result = "error";
-  //     $msg = "Message not sent. Try again later";
-  //   }
-
-  // } catch (Exception $e) {
-  //   $result = "error";
-  //   $status = "The message was not sent. The reason for the error: { $mail->ErrorInfo }";
-  // }
 
   // Отображение результата
   echo json_encode([
