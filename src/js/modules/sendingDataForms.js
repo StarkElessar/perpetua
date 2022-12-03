@@ -1,6 +1,9 @@
 import { clearInputs } from '../helpers/clearInputs'
 import { postData } from '../helpers/postData'
 
+const localUrl = './../files/server.php'
+const originUrl = 'https://web-divingstudio.by/perpetua/files/server.php'
+
 const sendingDataForms = () => {
   document.querySelectorAll('form').forEach((form) => {
     form.addEventListener('submit', async (event) => {
@@ -12,7 +15,7 @@ const sendingDataForms = () => {
 
       try {
         const formData = new FormData(form)
-        const {  message, result } = await postData('https://web-divingstudio.by/perpetua/files/server.php', formData)
+        const {  message, result } = await postData(localUrl, formData)
         
         if (result === 'success') {
           console.log(message);
