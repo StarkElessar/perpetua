@@ -8,7 +8,7 @@ const sendingDataForms = () => {
       
       try {
         const formData = new FormData(form)
-        const {  message, result } = await postData('./../files/mailPostNotify.php', formData)
+        const {  message, result } = await postData('./../files/server.php', formData)
 
         if (result === 'success') {
           console.log(message);
