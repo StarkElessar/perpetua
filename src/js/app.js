@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setAdaptiveVideo()
   
   const startTimerPageLoaded = Date.now()
-  const audio = new Audio('https://starkelessar.github.io/perpetua/files/audio/background-sound.mp3')
+  const audio = new Audio('../files/audio/background-sound.mp3')
   let isPlay = false
 
   const soundStartButton = document.querySelector('.start-sound')
@@ -155,6 +155,35 @@ document.addEventListener('DOMContentLoaded', () => {
 
       videoScene4.currentTime = 18
       videoScene4.play()
+    }
+    const videoScene5 = document.querySelector('[data-scene-5]')
+    if (target.hasAttribute('data-link-creation')) {
+      console.log('Клик был на creation')
+      deleteActiveClassName('.box-text', 'active')
+
+      videoScene5.currentTime = 1
+      videoScene5.play()
+    }
+    if (target.hasAttribute('data-link-generation')) {
+      console.log('Клик был на genegation')
+      deleteActiveClassName('.box-text', 'active')
+
+      videoScene5.currentTime = 8
+      videoScene5.play()
+    }
+    if (target.hasAttribute('data-link-spiral')) {
+      console.log('Клик был на spiral')
+      deleteActiveClassName('.box-text', 'active')
+
+      videoScene5.currentTime = 14
+      videoScene5.play()
+    }
+    if (target.hasAttribute('data-link-installation')) {
+      console.log('Клик был на conversion')
+      deleteActiveClassName('.box-text', 'active')
+
+      videoScene5.currentTime = 23
+      videoScene5.play()
     }
   })
   
