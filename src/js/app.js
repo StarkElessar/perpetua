@@ -60,6 +60,10 @@ document.addEventListener('DOMContentLoaded', () => {
       audio.volume = 1
       console.log('Звук не играет')
     }
+
+    audio.addEventListener('timeupdate', () => {
+      if(round(audio.currentTime) === 195) audio.currentTime = 0
+    })
   })
 
   new fullpage('#fullpage', {
