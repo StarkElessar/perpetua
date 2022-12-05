@@ -5,7 +5,10 @@
     }
     .video__bg {
       video {
-        object-position: center top;
+        object-position: center bottom;
+        @include media (1440) {
+          object-position: center top;
+        }
       }
         @include media (768) {
             height: 60%;
