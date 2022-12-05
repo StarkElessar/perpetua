@@ -32,6 +32,9 @@
         @include media(600) {
           margin-bottom: 30px;
         }
+        img {
+          max-width: 100%;
+        }
       }
     }
     &.two {
