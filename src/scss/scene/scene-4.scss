@@ -100,6 +100,7 @@
         @include media(1440) {
           padding: 0 100px 0 80px;
         }
+
       }
       &.active {
         max-height: 100%;
@@ -119,6 +120,9 @@
             padding: 0 100px 0 80px;
             padding-top: 35px;
             padding-bottom: 55px;
+          }
+          @include media (990) {
+            padding: 25px 38px 35px 38px;
           }
         }
         .line {
