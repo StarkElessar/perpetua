@@ -1038,8 +1038,8 @@ body .lock {
 }
 
 .scene__5 .video__bg video {
-  -o-object-position: center top;
-     object-position: center top;
+  -o-object-position: center bottom;
+     object-position: center bottom;
 }
 
 .scene__5.active .box-text {
@@ -1433,6 +1433,15 @@ body .lock {
           animation: form 6s ease-in-out;
 }
 
+.scene__7 .send-message {
+  display: none;
+  text-align: center;
+  font-size: 12px;
+  line-height: 22px;
+  margin: 0 auto 14px;
+  text-decoration: underline;
+}
+
 @-webkit-keyframes form {
   0% {
     max-width: 0%;
@@ -1481,6 +1490,10 @@ body .lock {
 .footer__block.one .logo {
   max-width: 240px;
   width: 100%;
+}
+
+.footer__block.one .logo img {
+  max-width: 100%;
 }
 
 .footer__block.two {
@@ -1889,6 +1902,11 @@ body .lock {
     line-height: 24px;
   }
 
+  .scene__5 .video__bg video {
+    -o-object-position: center top;
+       object-position: center top;
+  }
+
   .scene__5.active .box-text {
     padding: 0 50px 0 40px;
   }
@@ -2041,6 +2059,10 @@ body .lock {
   .scene__4.active .box-text.active {
     padding-top: 25px;
     padding-bottom: 35px;
+  }
+
+  .scene__4.active .box-text.active.box-1 {
+    padding: 25px 38px 35px 38px;
   }
 
   .scene__4.active .box-text.active .line::before {
