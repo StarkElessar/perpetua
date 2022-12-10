@@ -51,26 +51,6 @@
   &__box {
     width: 33%;
     margin-bottom: rem(88);
-    .capsule__button {
-      background: none;
-      border: none;
-      max-width: 100%;
-      position: relative;
-      display: flex;
-      align-items: center;
-      &::after {
-        content: "";
-        width: 15px;
-        height: 15px;
-        transform: rotate(45deg);
-        border: 1px solid #ffffff;
-        border-right: none;
-        border-bottom: none;
-        margin-left: 25px;
-        display: flex;
-        transition: all 500ms ease-in-out;
-      }
-    }
     input {
       display: none;
       &:checked + .capsule__button {
@@ -78,6 +58,26 @@
           transform: rotate(-135deg);
         }
       }
+    }
+  }
+  &__button {
+    background: none;
+    border: none;
+    max-width: 100%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    &::after {
+      content: "";
+      width: 15px;
+      height: 15px;
+      transform: rotate(45deg);
+      border: 1px solid #ffffff;
+      border-right: none;
+      border-bottom: none;
+      margin-left: 25px;
+      display: flex;
+      transition: all 500ms ease-in-out;
     }
   }
 }
