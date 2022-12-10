@@ -1,15 +1,17 @@
 const setAdaptiveVideo = () => {
   const tagsVideo = document.querySelectorAll('[data-video]')
 
-  tagsVideo.forEach((video) => {
-    if (video.dataset.video === 'scene-1') {
-      changeVideoFormating(video)
-    } else if (video.dataset.video === 'scene-4') {
-      changeVideoFormating(video)
-    } else {
-      changeVideoFormating(video)
-    }
-  })
+  if (tagsVideo) {
+    tagsVideo.forEach((video) => {
+      if (video.dataset.video === 'scene-1') {
+        changeVideoFormating(video)
+      } else if (video.dataset.video === 'scene-4') {
+        changeVideoFormating(video)
+      } else {
+        changeVideoFormating(video)
+      }
+    })
+  }
 }
 
 const changeVideoFormating = (parentVideNode) => {
