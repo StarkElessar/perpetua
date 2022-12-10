@@ -68,12 +68,14 @@
                 border-bottom: none;
                 margin-left: 25px;
                 display: flex;
+                transition: all 0.5 ease-in-out;
               }
         }
         input {
             display: none;
             &:checked + .capsule__button {
                 &::after {
+                    transition: all 0.5 ease-in-out;
                     transform: rotate(-135deg);
                   } 
             }
