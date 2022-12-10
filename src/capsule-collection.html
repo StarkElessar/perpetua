@@ -1,34 +1,64 @@
 <!DOCTYPE html>
 @@include('./components/page-blocks/_head.html', {
-  "lang":"en",
-  "title":"DNA Time capsule installation",
-  "description":"",
-  "keywords":"",
+"lang":"en",
+"title":"DNA Time capsule installation",
+"description":"",
+"keywords":"",
 })
 
 <body>
-  @@include('components/page-blocks/_header.html')
-  <main class="main">
-    <section class="capsule__section">
+  <div class="wraper">
+    @@include('components/page-blocks/_header.html')
+    <main class="main">
+      <section class="capsule__section">
         <div class="capsule__background">
-            <img src="images/logo.png" alt="">
+          <img src="images/logo.png" alt="">
         </div>
         <div class="capsule__container">
-            <div class="capsule__logo">
-                <img src="images/capsule__bg.png" alt="">
+          <div class="capsule__logo">
+            <img src="images/capsule__bg.png" alt="">
+          </div>
+          <h1 class="capsule__title">DNA TIME CAPSULE COLLECTION</h1>
+          <form class="capsule__block" data-form="switchText">
+            <label class="capsule__box box-1">
+              <input type="radio" name="switch" checked value="journey">
+              <span class="capsule__button">
+                Part of your Icon’s Journey
+              </span>
+            </label>
+            <label class="capsule__box box-2">
+              <input type="radio" name="switch" value="few">
+              <span class="capsule__button">
+                One of the Chosen Few
+              </span>
+            </label>
+            <label class="capsule__box box-3">
+              <input type="radio" name="switch" value="unexpected">
+              <span class="capsule__button">
+                Expect the Unexpected
+              </span>
+            </label>
+            <label class="capsule__box box-4">
+              <input type="radio" name="switch" value="owner">
+              <span class="capsule__button">
+                On-chain and Off-chain Owner
+              </span>
+            </label>
+            <label class="capsule__box box-5">
+              <input type="radio" name="switch" value="investor">
+              <span class="capsule__button">
+                Art andInnovation Investor
+              </span>
+            </label>
+            <div class="capsule__content">
+
             </div>
-            <h1 class="capsule__title">DNA TIME CAPSULE COLLECTION</h1>
-            <div class="capsule__block">
-                <div class="capsule__box box-1">Part of your Icon’s Journey</div>
-                <div class="capsule__box box-2">One of the Chosen Few</div>
-                <div class="capsule__box box-3">Expect the Unexpected</div>
-                <div class="capsule__box box-4">On-chain and Off-chain Owner</div>
-                <div class="capsule__box box-5">Art andInnovation Investor</div>
-            </div>
+          </form>
         </div>
-    </section>
-  </main>
-  @@include('components/page-blocks/_scripts.html')
+      </section>
+    </main>
+    @@include('components/page-blocks/_scripts.html')
+  </div>
 </body>
 
 </html>

@@ -1,0 +1,16 @@
+.capsule {
+    &__section {
+        max-width: 100%;
+    }
+    &__background {
+        img {
+            max-width: 100%;
+        }
+    }
+    &__logo {
+        max-width: 100%;
+        img {
+            max-width: 100%;
+        }
+    }
+}
