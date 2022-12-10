@@ -7,31 +7,30 @@
 })
 
 <body>
-  @@include('components/page-blocks/_header.html')
-  <main class="main">
-    <div class="wrapper">
-        <section class="capsule__section">
-            <div class="capsule__background">
-                <img src="images/logo.png" alt="">
-            </div>
-            <div class="capsule__container">
-                <div class="capsule__logo">
-                    <img src="images/capsule__bg.png" alt="">
-                </div>
-                <h1 class="capsule__title">DNA TIME CAPSULE COLLECTION</h1>
-                <div class="capsule__block">
-                    <div class="capsule__box box-1">Part of your Icon’s Journey</div>
-                    <div class="capsule__box box-2">One of the Chosen Few</div>
-                    <div class="capsule__box box-3">Expect the Unexpected</div>
-                    <div class="capsule__box box-4">On-chain and Off-chain Owner</div>
-                    <div class="capsule__box box-5">Art andInnovation Investor</div>
-                </div>
-            </div>
-        </section>
+    <div class="wraper">
+        @@include('components/page-blocks/_header.html')
+        <main class="main">
+              <section class="capsule__section">
+                  <div class="capsule__background">
+                      <img src="images/logo.png" alt="">
+                  </div>
+                  <div class="capsule__container">
+                      <div class="capsule__logo">
+                          <img src="images/capsule__bg.png" alt="">
+                      </div>
+                      <h1 class="capsule__title">DNA TIME CAPSULE COLLECTION</h1>
+                      <div class="capsule__block">
+                          <div class="capsule__box box-1">Part of your Icon’s Journey</div>
+                          <div class="capsule__box box-2">One of the Chosen Few</div>
+                          <div class="capsule__box box-3">Expect the Unexpected</div>
+                          <div class="capsule__box box-4">On-chain and Off-chain Owner</div>
+                          <div class="capsule__box box-5">Art andInnovation Investor</div>
+                      </div>
+                  </div>
+              </section>
+        </main>
+        @@include('components/page-blocks/_scripts.html')
     </div>
-    
-  </main>
-  @@include('components/page-blocks/_scripts.html')
 </body>
 
 </html>
