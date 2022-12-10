@@ -10,16 +10,17 @@
           object-position: center top;
         }
       }
-        @include media (768) {
-            height: 60%;
-            top: 10%;
+      @include media (768) {
+          height: 60%;
+          top: 10%;
 
-          }
-          @include media (768) {
-            height: 60%;
-            top: 10%;
-          }
-      }
+        }
+        @include media (768) {
+          height: 60%;
+          top: 10%;
+        }
+    }
+
 }
 .scene__5.active {
     
@@ -89,6 +90,47 @@
             color: transparent;
             -webkit-background-clip: text;
             background-clip: text;
+          }
+          .more {
+            margin-top: rem(76);
+            font-family: "BunkenTech";
+            letter-spacing: 0.2em;
+            background: linear-gradient(270deg, #ffbb00 60%, #1bff00 100%);
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            text-transform: uppercase;
+            display: flex;
+            position: relative;
+            align-items: center;
+            font-size: 26px;
+            &::after {
+              content:"";
+              width: 14px;
+              height: 14px;
+              transform: rotate(45deg);
+              border: 2px solid #ebc100;
+              border-left: none;
+              border-bottom: none;
+              margin-left: 15px;
+              @include media (1440) {
+                width: 10px;
+                height: 10px;
+              }
+              @include media (990) {
+                width: 6px;
+                height: 6px;
+                margin-left: 10px;
+              }
+            }
+            @include media (1440) {
+              font-size: 20px;
+              margin-top: 50px;
+            }
+            @include media (990) {
+              font-size: 12px;
+              margin-top: 30px;
+            }
           }
         }
       }

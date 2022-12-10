@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
   setAdaptiveVideo()
   
   const startTimerPageLoaded = Date.now()
-  const audio = new Audio('../files/audio/background-sound.mp3')
+  const audio = new Audio('/files/audio/background-sound.mp3')
   let isPlay = false
 
   const soundStartButton = document.querySelector('.start-sound')
