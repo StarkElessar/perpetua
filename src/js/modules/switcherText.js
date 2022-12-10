@@ -11,9 +11,7 @@ const switcherText = () => {
   if (switchTextForm) {
     const switcher = () => {
       const category = switchTextForm.querySelector('input[name="switch"]:checked').value
-      const placeText = switchTextForm.querySelector('.capsule__content')
-
-      placeText.innerText = textData[category]
+      switchTextForm.querySelector('.capsule__content').innerText = textData[category]
     }
 
     switcher()
