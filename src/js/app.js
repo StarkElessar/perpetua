@@ -13,7 +13,7 @@ import { toggleSidebarMenu } from './modules/toggleSidebarMenu'
 import { toggleAnimation } from './modules/toggleAnimation'
 import { sendingDataForms } from './modules/sendingDataForms'
 import switcherText from './modules/switcherText'
-
+import {accordion} from './modules/accordion'
 /* Раскомментировать для использования */
 // import { MousePRLX } from './libs/parallaxMouse'
 
@@ -182,4 +182,5 @@ document.addEventListener('DOMContentLoaded', () => {
   
   sendingDataForms()
   switcherText()
+  accordion()
 })
