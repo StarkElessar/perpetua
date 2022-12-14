@@ -4,6 +4,9 @@
     min-height: 100vh;
     max-width: 100%;
     padding: 72px 25px;
+    @include media(990){
+      padding: 60px 20px;
+    }
   }
   &__background {
     position: absolute;
@@ -17,6 +20,9 @@
     z-index: -1;
     display: flex;
     align-items:flex-end;
+    @include media(990){
+      align-items:flex-start;
+    }
     img {
       width: 100%;
     }
@@ -25,6 +31,10 @@
     max-width: 352px;
     width: 100%;
     margin: 0 auto rem(170);
+    @include media(990){
+      max-width: 180px;
+      margin-bottom: rem(70);
+    }
     img {
       max-width: 100%;
     }
@@ -43,6 +53,13 @@
     font-size: 41px;
     line-height: 71px;
     letter-spacing: 0.2em;
+    @include media(990){
+      font-size: 15px;
+      letter-spacing: 0.3em;
+      line-height: 26px;
+      max-width: 270px;
+      margin-bottom: rem(80);
+    }
   }
   &__content {
     width: 100%;
@@ -50,7 +67,9 @@
     line-height: 24px;
     font-weight: 300;
     display: flex;
-
+    @include media(990){
+      display: none;
+    }
   }
 }
 
@@ -60,13 +79,20 @@
     justify-content: space-between;
     max-width: 990px;
     margin: 0 auto;
+    @include media (990){
+      flex-direction: column;
+      align-items: center
+    }
   // .accordion__item
   &__item {
     max-width: 265px;
     width: max-content;
     margin-bottom: rem(40);
     cursor: pointer;
-
+    @include media (990) {
+      max-width: 350px;
+      margin-bottom: rem(50);
+    }
     &.open {
       .accordion__header {
         min-height: 30px;
@@ -96,6 +122,9 @@
       max-width: 310px;
       margin: 0 auto;
       margin-bottom: rem(40);
+      @include media (990) {
+        max-width: 350px;
+      }
     }
     &.box-5 {
       max-width: 350px;
@@ -118,6 +147,12 @@
     text-transform: uppercase;
     font-size: 17px;
     line-height: 34px;
+    @include media (990) {
+      max-width: 280px;
+      font-size: 14px;
+      letter-spacing: 0.3em;
+      line-height: 26px;
+    }
   }
   // .accordion__icon
   &__icon {
@@ -148,6 +183,13 @@
     overflow: hidden;
     transition: all 200ms linear;
     display: none;
+    @include media(990){
+      display: block;
+      font-weight: 300;
+      font-size: 14px;
+      line-height: 24px;
+      color: #fff;
+    }
   }
   // .accordion__content-text
   &__content-text {
