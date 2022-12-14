@@ -9,3 +9,4 @@ gulp/version.json
 backup
 src/files/mailPost.php
 src/.temporary_cache
+/src/files/server.php

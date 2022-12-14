@@ -10,12 +10,15 @@
     bottom: 0;
     left: 0;
     right: 0;
+    top: 0;
+    height: 100vh;
     max-width: 1614px;
     margin: 0 auto;
     z-index: -1;
+    display: flex;
+    align-items:flex-end;
     img {
       width: 100%;
-      max-width: 100%;
     }
   }
   &__logo {
@@ -35,49 +38,123 @@
     background-clip: text;
     text-transform: uppercase;
     text-align: center;
-    margin: 0 auto rem(180);
+    margin: 0 auto rem(140);
     max-width: 715px;
     font-size: 41px;
     line-height: 71px;
     letter-spacing: 0.2em;
   }
-  &__block {
+  &__content {
+    width: 100%;
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 300;
+    display: flex;
+
+  }
+}
+
+.accordion {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     max-width: 990px;
     margin: 0 auto;
+  // .accordion__item
+  &__item {
+    max-width: 265px;
+    width: max-content;
+    margin-bottom: rem(40);
+    cursor: pointer;
+
+    &.open {
+      .accordion__header {
+        min-height: 30px;
+      }
+      .accordion__icon {
+        transition: all 0.5s ease-in-out;
+        transform: rotate(180deg);
+      }
+    }
+    &.box-1, &.box-3, &.box-5 {
+      .accordion__title {
+        background: linear-gradient(270deg, #e511ff 10%, #00fff6 100%);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+    }
+    &.box-2, &.box-4 {
+      .accordion__title {
+        background: linear-gradient(270deg, #ffbb00 10%, #1bff00 100%);
+        color: transparent;
+        -webkit-background-clip: text;
+        background-clip: text;
+      }
+    }
+    &.box-4{
+      max-width: 310px;
+      margin: 0 auto;
+      margin-bottom: rem(40);
+    }
+    &.box-5 {
+      max-width: 350px;
+      margin: 0 auto;
+      margin-bottom: rem(40);
+    }
   }
-  &__box {
-    width: 33%;
-    margin-bottom: rem(88);
-    input {
-      display: none;
-      &:checked + .capsule__button {
-        &::after {
-          transform: rotate(-135deg);
-        }
+  // .accordion__header
+  &__header {
+    display: flex;
+    min-height: 50px;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  // .accordion__title
+  &__title {
+    font-family: "BunkenTech";
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-size: 17px;
+    line-height: 34px;
+  }
+  // .accordion__icon
+  &__icon {
+    display: block;
+    flex: 0 0 20px;
+    height: 20px;
+    transition: all 0.5s ease-in-out;
+    & .icon-plus,
+    & .icon-minus {
+      & path {
+        fill: #333;
+      }
+    }
+    &.hide {
+      & .icon-minus {
+        display: none;
+      }
+    }
+    &.show {
+      & .icon-plus {
+        display: none;
       }
     }
   }
-  &__button {
-    background: none;
-    border: none;
-    max-width: 100%;
-    position: relative;
-    display: flex;
-    align-items: center;
-    &::after {
-      content: "";
-      width: 15px;
-      height: 15px;
-      transform: rotate(45deg);
-      border: 1px solid #ffffff;
-      border-right: none;
-      border-bottom: none;
-      margin-left: 25px;
-      display: flex;
-      transition: all 500ms ease-in-out;
-    }
+  // .accordion__content
+  &__content {
+    height: 0;
+    overflow: hidden;
+    transition: all 200ms linear;
+    display: none;
+  }
+  // .accordion__content-text
+  &__content-text {
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 24px;
+    text-align: left;
+    color: #fff;    
   }
 }
