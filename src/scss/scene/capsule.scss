@@ -67,6 +67,16 @@
     line-height: 24px;
     font-weight: 300;
     display: flex;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    // transform: translateY(rem(-40));
+    transition: all 400ms ease-in-out;
+    &._active {
+      opacity: 1;
+      transform: translateY(0);
+      max-height: 100%;
+    }
     @include media(990){
       display: none;
     }
@@ -189,6 +199,9 @@
       font-size: 14px;
       line-height: 24px;
       color: #fff;
+    }
+    p {
+
     }
   }
   // .accordion__content-text
