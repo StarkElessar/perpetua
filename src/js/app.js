@@ -34,7 +34,46 @@ toggleSidebarMenu()
 window.addEventListener('resize', () => {
   setAdaptiveVideo
   location.reload()
+
+  if (window.innerWidth < 990) {
+    accordion()
+  } else {
+    toggleText()
+  }
 })
+
+function toggleText() {
+  const accordionButtons = document.querySelectorAll('[data-button]')
+  const accordionItems = document.querySelectorAll('.accordion__item')
+
+  accordionButtons.forEach((button) => {
+    button.addEventListener('click', switcher)
+  })
+  
+  function switcher() {
+    if (this.dataset.button === '1') {
+      console.log('Верхние кнопки')
+      const currentTextNode = this.nextElementSibling.querySelector('p')
+      document.querySelector(`[data-content="2"]`).classList.remove('_active')
+      accordionItems.forEach((item) => item.classList.remove('open'))
+      
+      this.parentElement.classList.add('open')
+      document.querySelector(`[data-content="${this.dataset.button}"]`).innerText = currentTextNode.innerText
+      document.querySelector(`[data-content="${this.dataset.button}"]`).classList.add('_active')
+    } else {
+      console.log('Нижние кнопки')
+      const currentTextNode = this.nextElementSibling.querySelector('p')
+      document.querySelector(`[data-content="1"]`).classList.remove('_active')
+      accordionItems.forEach((item) => item.classList.remove('open'))
+
+      this.parentElement.classList.add('open')
+      document.querySelector(`[data-content="${this.dataset.button}"]`).innerText = currentTextNode.innerText
+      document.querySelector(`[data-content="${this.dataset.button}"]`).classList.add('_active')
+    }
+  }
+}
+
+
 document.addEventListener('DOMContentLoaded', () => {
   setAdaptiveVideo()
   
@@ -182,5 +221,9 @@ document.addEventListener('DOMContentLoaded', () => {
   
   sendingDataForms()
   switcherText()
-  accordion()
+  if (window.innerWidth < 990) {
+    accordion()
+  } else {
+    toggleText()
+  }
 })
