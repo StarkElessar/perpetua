@@ -5,7 +5,7 @@
     max-width: 100%;
     padding: 72px 25px;
     @include media(990){
-      padding: 60px 20px;
+      padding: 60px 0;
     }
   }
   &__background {
@@ -25,6 +25,11 @@
     }
     img {
       width: 100%;
+      @include media(600){
+        height: 60%;
+        object-fit: cover;
+        margin-top: 40px;
+      }
     }
   }
   &__logo {
@@ -70,6 +75,17 @@
     @include media(990){
       display: none;
     }
+    opacity: 0;
+    // transform: translateY(rem(-40));
+    transition: all 400ms ease-in-out;
+    max-height: 0;
+    overflow: hidden;
+    &._active {
+      opacity: 1;
+      // transform: translateY(0);
+      max-height: 100%;
+      margin-bottom: rem(20);
+    }
   }
 }
 
@@ -82,6 +98,10 @@
     @include media (990){
       flex-direction: column;
       align-items: center
+    }
+    @include media (600) {
+      max-width: 350px;
+      margin: 0 auto;
     }
   // .accordion__item
   &__item {
@@ -99,7 +119,11 @@
       }
       .accordion__icon {
         transition: all 0.5s ease-in-out;
-        transform: rotate(180deg);
+        transform: rotate(0);
+      }
+      .accordion__content {
+        max-height: 100%;
+        margin-top: rem(35);
       }
     }
     &.box-1, &.box-3, &.box-5 {
@@ -130,6 +154,9 @@
       max-width: 350px;
       margin: 0 auto;
       margin-bottom: rem(40);
+      @include media(990) {
+        margin-bottom: 0  ;
+      }
     }
   }
   // .accordion__header
@@ -160,6 +187,7 @@
     flex: 0 0 20px;
     height: 20px;
     transition: all 0.5s ease-in-out;
+    transform: rotate(180deg);
     & .icon-plus,
     & .icon-minus {
       & path {
@@ -179,7 +207,6 @@
   }
   // .accordion__content
   &__content {
-    height: 0;
     overflow: hidden;
     transition: all 200ms linear;
     display: none;
@@ -189,6 +216,7 @@
       font-size: 14px;
       line-height: 24px;
       color: #fff;
+      height: 0;
     }
   }
   // .accordion__content-text
