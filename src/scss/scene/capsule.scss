@@ -31,11 +31,20 @@
         margin-top: 40px;
       }
     }
+    picture {
+      width: 100%;
+      @include media(600){
+        height: 60%;
+        object-fit: cover;
+        margin-top: 40px;
+      }
+    }
   }
   &__logo {
     max-width: 352px;
     width: 100%;
     margin: 0 auto rem(170);
+    display: flex;
     @include media(990){
       max-width: 180px;
       margin-bottom: rem(70);
